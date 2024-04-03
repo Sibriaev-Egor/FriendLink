@@ -1,9 +1,7 @@
 const express = require("express");
-
 const pool = require('../utils/databaseConnect');
-
-
 const app = express();
+const ApiError = require("../error/ApiError")
 
 class registerController{
     async register_enter(req, res) {
@@ -41,9 +39,12 @@ class registerController{
 
         });
     }
-    async register_reset_password(req, res) {
-        let id = req.params.id;
+    async register_reset_password(req, res, next) {
+        let id = req.query.id;
         const pass = req.body.pass;
+        if (!id) {
+            return next(ApiError.badRequest("Не задан id"))
+        }
         pool.query("UPDATE user_table SET pass=$1 WHERE id=$2", [pass, id], function (err, data) {
             if (err) return res.json({err:err});
             return res.json();

@@ -1,15 +1,17 @@
 require('dotenv').config();
-// const mysql = require('mysql2');
 const express = require('express');
 const cors = require('cors');
 const router = require('./routes');
-const PORT = process.env.PORT || 3001;
 const pool = require('./utils/databaseConnect');
+const errorHandler = require("./middleware/ErrorHandlingMiddleware")
+
+const PORT = process.env.PORT || 3001;
 
 const app = express();
-app.use(cors());
-app.use(express.json());
-app.use('/api', router);
+app.use(cors())
+app.use(express.json())
+app.use('/api', router)
+app.use(errorHandler) // обработка ошибок
 
 const start = async () => {
     app.listen(PORT, function(){
