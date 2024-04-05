@@ -1,9 +1,13 @@
 const Router = require('express');
 const router = new Router();
 const friendsController = require('../controllers/friendsController');
+const authMiddleware = require("../middleware/authMiddleware")
 
-// router.post('/enter', registerController.register_enter);
-// router.post('/check', registerController.register_check);
-// router.post('/resetPassword', registerController.register_reset_password);
+router.get('/getFriendsList', friendsController.friends);
+router.get('/getSubsList', friendsController.subs);
+router.get('/getSubscriptionsList', friendsController.subscriptions);
+router.get('/getBanList', authMiddleware, friendsController.banList)
+router.post('/action', authMiddleware, friendsController.doAction)
+router.post('/delete', authMiddleware, friendsController.deleteSome)
 
 module.exports = router;

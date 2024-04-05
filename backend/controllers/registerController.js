@@ -7,6 +7,7 @@ class registerController{
     async register_create(req, res, next) {
         const {email, password, nick} = req.body;
         try {
+            const test = await pool.query(`SELECT id from user_table WHERE email=$1`, [email])
             if ((await pool.query(`SELECT id from user_table WHERE email=$1`, [email])).rows[0]) return next(ApiError.badRequest("Пользователь с такой почтой уже зарегестрирован!"))
             if ((await pool.query(`SELECT id from user_table WHERE nick=$1`, [nick])).rows[0]) return next(ApiError.badRequest("Ник уже используется!"))
             const hashpassword = await bcrypt.hash(password, 5)
@@ -32,15 +33,13 @@ class registerController{
         return res.json({token})
     }
     async register_reset_password(req, res, next) {
-        let id = req.query.id;
-        const pass = req.body.pass;
-        if (!id) {
-            return next(ApiError.badRequest("Не задан id"))
-        }
-        pool.query("UPDATE user_table SET pass=$1 WHERE id=$2", [pass, id], function (err, data) {
-            if (err) return res.json({err:err});
-            return res.json();
+        const password = req.body.password;
+        const id = req.user.id;
+        const hashpassword = await bcrypt.hash(password, 5);
+        pool.query("UPDATE user_table SET pass=$1 WHERE id=$2", [hashpassword, id], function (err, data) {
+            if (err) next(ApiError.internal(err.message))
         });
+        return res.json()
     }
 
 }

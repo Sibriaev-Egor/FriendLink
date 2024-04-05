@@ -3,8 +3,8 @@ const pool = require('../utils/databaseConnect');
 const app = express();
 
 class adminController{
-    async get_user(req, res) {
-        
+    async admin_func(req, res) {
+        return res.json({message: "All right!"})
     }
 
 }
