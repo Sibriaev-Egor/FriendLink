@@ -1,21 +1,17 @@
-const express = require("express");
 const pool = require('../utils/databaseConnect');
-const app = express();
+const ApiError = require("../error/ApiError")
 
 class userController{
-    async get_user(req, res) {
+    async get_user(req, res, next) {
         let id = req.params.id;
-        pool.query("", [id], function (err, data) {
-            if (!err) return res.json({
-                data: data
-            });
-        });
-    }
-    async create_user(req, res) {
-        pool.query(`SELECT * from user_table WHERE id=$1`, [3], function (err, data) {
-            if (err) return res.json({err:err});
-            res.json({
-                data:data.rows
+        pool.query("SELECT id, description, nick FROM user_table WHERE id=$1", [id], function (err, data) {
+            if (err) {
+                return next(ApiError.internal(err.message));
+            }
+            else return res.json({
+                id: id,
+                description: data.rows[0].description,
+                nick: data.rows[0].nick
             });
         });
     }
