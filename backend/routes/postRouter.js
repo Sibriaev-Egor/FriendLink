@@ -1,9 +1,14 @@
 const Router = require('express');
 const router = new Router();
 const postController = require('../controllers/postController');
+const authMiddleware = require("../middleware/authMiddleware")
 
-// router.post('/enter', registerController.register_enter);
-// router.post('/check', registerController.register_check);
-// router.post('/resetPassword', registerController.register_reset_password);
+router.get('/getAll/:id', postController.get_all);
+router.get('/get/:id', postController.get_one);
+router.post('/create', authMiddleware, postController.create);
+router.post('/edit', authMiddleware, postController.edit);
+router.post('/like', authMiddleware, postController.like);
+router.post('/delete', authMiddleware, postController.delete);
+router.post('/claim', authMiddleware, postController.claim);
 
 module.exports = router;

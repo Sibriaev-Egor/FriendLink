@@ -1,9 +1,10 @@
 const DAY_TIME = 24*3600000
+const HOUR_TIME = 4*3600000
 
 class MyTime{
 
     static nowDate() {
-        return new Date(Date.now());
+        return new Date(Date.now() + HOUR_TIME);
     }
     static nowTime() {
         return Date.now();
@@ -21,4 +22,4 @@ class MyTime{
     }
 }
 
-module.exports = new MyTime();
+module.exports = MyTime;
