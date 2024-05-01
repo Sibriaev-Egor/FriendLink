@@ -1,18 +1,17 @@
-const pool = require('../utils/databaseConnect');
 const ApiError = require("../error/ApiError")
 const bcrypt = require('bcrypt')
 const UniversalTool = require("../utils/UniversalTool")
+const {User} = require("../utils/Entities")
 
 class registerController{
     async register_create(req, res, next) {
         const {email, password, nick} = req.body;
         try {
-            const test = await pool.query(`SELECT id from user_table WHERE email=$1`, [email])
-            if ((await pool.query(`SELECT id from user_table WHERE email=$1`, [email])).rows[0]) return next(ApiError.badRequest("Пользователь с такой почтой уже зарегестрирован!"))
-            if ((await pool.query(`SELECT id from user_table WHERE nick=$1`, [nick])).rows[0]) return next(ApiError.badRequest("Ник уже используется!"))
+            if (await User.find_id_by_email(email)) return next(ApiError.badRequest("Пользователь с такой почтой уже зарегестрирован!"))
+            if (await User.find_id_by_nick(nick)) return next(ApiError.badRequest("Ник уже используется!"))
             const hashpassword = await bcrypt.hash(password, 5)
-            const data = await pool.query(`INSERT INTO user_table (email, pass, nick) VALUES ($1, $2, $3) RETURNING id`, [email, hashpassword, nick])
-            const token = UniversalTool.generateJWT(data.rows[0].id, email, false)
+            const id = await User.create(email, hashpassword, nick)
+            const token = UniversalTool.generateJWT(id, email, false)
             return res.json({token})
         } catch (err) {
             return next(ApiError.internal(err.message));
@@ -20,12 +19,12 @@ class registerController{
     }
     async register_login(req, res, next) {
         const {email, password} = req.body;
-        const data = await pool.query(`SELECT pass, id, role FROM user_table WHERE email=$1`, [email]);
-        if (!data.rows[0]) return next(ApiError.badRequest("Пользователь не зарегистрирован!"))
-        if(!bcrypt.compareSync(password, data.rows[0].pass)) {
+        const user = await User.find_user_by_email(email);
+        if (!user) return next(ApiError.badRequest("Пользователь не зарегистрирован!"))
+        if(!bcrypt.compareSync(password, user.pass)) {
             return next(ApiError.badRequest("Неправильный пароль!"))
         }
-        const token = UniversalTool.generateJWT(data.rows[0].id, email, data.rows[0].role);
+        const token = UniversalTool.generateJWT(user.id, email, user.role);
         return res.json({token});
     }
     async register_check(req, res) {
@@ -36,9 +35,11 @@ class registerController{
         const password = req.body.password;
         const id = req.user.id;
         const hashpassword = await bcrypt.hash(password, 5);
-        pool.query("UPDATE user_table SET pass=$1 WHERE id=$2", [hashpassword, id], function (err, data) {
-            if (err) next(ApiError.internal(err.message))
-        });
+        try {
+            await User.reset_password(hashpassword, id)
+        }catch (e) {
+            return next(ApiError.internal(err.message))
+        }
         return res.json()
     }
 
