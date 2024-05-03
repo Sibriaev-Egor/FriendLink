@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Создать пост</title>
+    <title>Редактировать профиль</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class= "background">
@@ -39,7 +39,7 @@
     </ul>
 </header>
 
-<div class="ellip_cap"></div>
+<div class="ellip_cap" style="height: 124px;"></div>
 <div class="ellipse" style="left: 462px; top: 98px"></div>
 <div class="nick_word" style="left: 510px; top: 113px; font-size: 20px;">Ник</div>
 <div class="navigate_word" style=" left: 608px; top: 152px; font-size: 15px">О себе</div>
@@ -49,22 +49,18 @@
         </li>
     </ul>
 </header>
-<div class="line" style="left: 444px; top: 209px; "></div>
-<img src="vector/user.png" style=" width: 20px; height: 20px; left: 461px; top: 222px; position: absolute">
-<header>
-    <ul>
-        <li> <a href="profile.html"> <div class="navigate_word" style=" left: 491px; top: 222px; font-size: 17px">Мои посты</div> </a>
-        </li>
-    </ul>
-</header>
-<img src="vector/post.png" style=" width: 20px; height: 20px; left: 644px; top: 222px; position: absolute">
-<div class="navigate_word" style=" left: 675px; top: 222px; font-size: 17px;"> <b>Создать пост</b></div>
 
-
-<div class="ellip_cap" style="height: 345px; left: 444px; top: 291px; "></div>
-<label class="navigate_word" style=" left: 488px; top: 320px; font-size: 20px">Расскажите что-нибудь...</label>
-<textarea class="create_post" minlength="1" maxlength="500" name="comment"></textarea>
-
-<button class="button_create_post" >Рассказать</button>
+<form>
+    <input class="tablet_vvod" minlength="4" maxlength="15"  style="width: 664px; height: 60px; left: 444px; top: 280px; font-size: 20px;"  placeholder="Новый логин">
+    <button class="button_create_post" style="width: 238px; height: 60px; left: 1160px; top: 280px; background: #96F486;">Сохранить</button>
+    <input class="tablet_vvod" minlength="4" maxlength="15" style="width: 664px; height: 60px; left: 444px; top: 374px; font-size: 20px;"  placeholder="Новый ник">
+    <button class="button_create_post" style="width: 238px; height: 60px; left: 1160px; top: 374px; background: #96F486;">Сохранить</button>
+    <input class="tablet_vvod" minlength="0" maxlength="40" style="width: 664px; height: 60px; left: 444px; top: 468px; font-size: 20px;"  placeholder="Информация о себе">
+    <button class="button_create_post" style="width: 238px; height: 60px; left: 1160px; top: 468px; background: #96F486;">Сохранить</button>
+    <input class="tablet_vvod" minlength="8" maxlength="16"  style="width: 664px; height: 60px; left: 444px; top: 562px; font-size: 20px;"  placeholder="Новый пароль">
+    <button class="button_create_post" style="width: 238px; height: 60px; left: 1160px; top: 562px; background: #96F486;">Сохранить</button>
+    <input class="tablet_vvod" minlength="8" maxlength="16"  style="width: 664px; height: 60px; left: 444px; top: 656px; font-size: 20px;"  placeholder="Повторите пароль">
+    <button class="button_create_post" style="width: 238px; height: 60px; left: 1160px; top: 656px; background: #96F486;">Сохранить</button>
+</form>
 </body>
 </html>

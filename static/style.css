@@ -130,7 +130,7 @@
 }
  .list{
      width: 313px;
-     height: 347px;
+     height: 307px;
      left: 31px;
      top: 88px;
      position: absolute;
@@ -247,5 +247,19 @@
      word-wrap: break-word
  }
 
-
-
+.friend_tablet{
+    width: 954px;
+    left: 430px;
+    position: absolute;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: 1px #D4D4D4 solid
+}
+.poisk{
+    width: 954px;
+    height: 50px;
+    position: absolute;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: 1px #D4D4D4 solid
+}
