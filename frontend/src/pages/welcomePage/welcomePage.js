@@ -21,7 +21,7 @@ const WelcomePage = () => {
             <div className="welcome_log_reg" style={{top: 565}}></div>
 
             <div className="text_log_reg" style={{top: 471}}>
-                <a href="/" className="href_form"> Вход </a>
+                <a href="/login" className="href_form"> Вход </a>
             </div>
                 
             <div className="text_log_reg" style={{top: 571}}>
