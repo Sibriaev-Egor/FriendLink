@@ -1,6 +1,6 @@
 import {Route, Navigate, Routes} from 'react-router-dom'
 import {allPrivateRoutes, allRoutes} from "./routes";
-import {WELCOME_PAGE} from "./utils/consts"
+import {ERROR_PAGE} from "./utils/consts"
 
 const AppRouter = () => {
 
@@ -14,7 +14,7 @@ const AppRouter = () => {
                 {allRoutes.map(({path, Component}) =>
                     <Route key={path} path={path} element={<Component/>} exact/>
                 )}
-                <Route path='*' element={<Navigate to={WELCOME_PAGE}/>} />
+                <Route path='*' element={<Navigate to={ERROR_PAGE}/>} />
             </Routes>
         </div>
     );
