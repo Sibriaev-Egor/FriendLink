@@ -91,7 +91,7 @@
     text-align: center;
     color: #117120;
     font-size: 40px;
-    font-family: Inter;
+    font-family: Inter, serif;
     font-style: italic;
     font-weight: 200;
     text-transform: uppercase;
@@ -107,11 +107,10 @@
     border-radius: 30px;
     border: 1px black solid;
 
-
     text-align: center;
     color: #CECECE;
     font-size: 30px;
-    font-family: Inter;
+    font-family: Inter, serif;
     font-weight: 400;
     word-wrap: break-word
 }
@@ -124,7 +123,7 @@
     text-align: center;
     color: #CECECE;
     font-size: 30px;
-    font-family: Inter;
+    font-family: Inter, serif;
     font-weight: 400;
     word-wrap: break-word
 }
@@ -158,7 +157,7 @@
      position: absolute;
      text-align: center;
      color: black;
-     font-family: Inter, serif;
+     font-family: Inter;
      font-weight: 300;
      word-wrap: break-word
  }
@@ -188,7 +187,7 @@
      position: absolute;
      text-align: center;
      color: black;
-     font-family: Abhaya Libre ExtraBold, serif;
+     font-family: Abhaya Libre ExtraBold;
      font-weight: 800;
      text-transform: capitalize;
      word-wrap: break-word
@@ -229,7 +228,6 @@
 
      border: 1px white solid;
 
-     position: absolute;
      color: black;
      font-size: 20px;
      font-family: Inter, serif;
@@ -245,7 +243,6 @@
      border-radius: 30px;
      border: 1px black solid;
 
-     position: absolute;
      text-align: center;
      color: black;
      font-size: 20px;
