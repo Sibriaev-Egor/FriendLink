@@ -2,6 +2,7 @@ import React from 'react';
 
 import '../mainStyles/style.css'
 import './loginPage.css'
+import '../mainStyles/reset.css'
 
 const LoginPage = () => {
     return (
@@ -9,7 +10,7 @@ const LoginPage = () => {
             <div className="name" style={{left: 1184, top: 45, 'text-align': 'center'}}>FriendLink</div>
             <div className="white_base" style={{width: 733, height: 388, left: 354, top: 256}}></div>
             <div className="head_log_reg">Войти</div>
-            <div >
+            <div>
                 <form>
                     <div>
                         <input
@@ -29,8 +30,8 @@ const LoginPage = () => {
                           placeholder="Введите пароль" required
                         />
                     </div>
-                    <div>
-                        <button className="tablet-button">
+                    <div >
+                        <button className="tablet-button-login">
                             Войти
                         </button>
                     </div>

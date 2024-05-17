@@ -78,11 +78,7 @@
     word-wrap: break-word
 }
 
-.tablet_button {
-    width: 450px;
-    height: 60px;
-    left: 495px;
-    position: absolute;
+.tablet-button {
     background: white;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
@@ -91,7 +87,7 @@
     text-align: center;
     color: #117120;
     font-size: 40px;
-    font-family: Inter, serif;
+    font-family: Inter;
     font-style: italic;
     font-weight: 200;
     text-transform: uppercase;
