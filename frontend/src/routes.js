@@ -25,6 +25,10 @@ export const allRoutes = [
     {
         path: pages.REGISTER_PAGE,
         Component: RegisterPage
+    },
+    {
+        path: pages.EDIT_PAGE,
+        Component: EditPage
     }
 ]
 
@@ -33,10 +37,7 @@ export const allPrivateRoutes = [
         path: pages.USER_PAGE + '/:id',
         Component: UserPage
     },
-    {
-        path: pages.EDIT_PAGE,
-        Component: EditPage
-    },
+
     {
         path: pages.NEWS_PAGE,
         Component: NewsPage

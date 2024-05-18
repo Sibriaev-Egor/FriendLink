@@ -7,13 +7,21 @@
 /*.back {
     width: 814px; height: 516px; left: 313px; top: 14px; position: absolute; background: linear-gradient(75deg, rgba(149.63, 244.37, 134.20, 0.29) 0%, rgba(51.20, 246.08, 19.48, 0.29) 43%, rgba(142.21, 253.28, 124.13, 0.29) 72%, rgba(140.78, 255, 122.19, 0.29) 96%); box-shadow: 150px 150px 150px; filter: blur(150px)
 }*/
-
+.cactus-page{
+    width: 47px; height: 52px; left: 15px; top: 5px; position: absolute;
+}
 .cactus {
     width: 234px;
     height: 293px;
     left: 603px;
     top: 66px;
     position: absolute
+}
+.vector-sign-out{
+    width: 26.25px; height: 26.26px; left: 1260px; top: 18px; position: absolute
+}
+.vector-list{
+    width: 30px; height: 30px; left: 66px; position: absolute;
 }
 .hello{
     width: 190.66px;
@@ -78,7 +86,7 @@
     word-wrap: break-word
 }
 
-.tablet-button {
+/*.tablet-button {
     background: white;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
@@ -93,7 +101,7 @@
     text-transform: uppercase;
     word-wrap: break-word;
 }
-.tablet_vvod {
+.tablet-vvod {
     width: 450px;
     height: 60px;
     left: 495px;
@@ -110,7 +118,7 @@
     font-weight: 400;
     word-wrap: break-word
 }
-
+*/
 .hint_words{
     width: 450px;
     height: 60px;
@@ -149,7 +157,7 @@
      border-top-left-radius: 20px;
      border-top-right-radius: 20px
  }
- .navigate_word{
+ .navigate-word{
      position: absolute;
      text-align: center;
      color: black;
@@ -157,6 +165,7 @@
      font-weight: 300;
      word-wrap: break-word
  }
+
  .ellipse{
      width: 100px;
      height: 100px;
@@ -177,7 +186,7 @@
      border: 1px black solid
  }
 
- .nick_word{
+ .nick-word{
      width: 239px;
      height: 47px;
      position: absolute;

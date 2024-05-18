@@ -14,7 +14,7 @@ const LoginPage = () => {
                 <form>
                     <div>
                         <input
-                            className="tablet_vvod"
+                            className="tablet-vvod-login"
                             minLength="4"
                             maxLength="15"
                             style={{top: 305}}
@@ -23,7 +23,7 @@ const LoginPage = () => {
                     </div>
                     <div>
                        <input
-                          className="tablet_vvod"
+                          className="tablet-vvod-login"
                           minLength="8"
                           maxLength="16"
                           style={{top: 402}}
@@ -31,7 +31,7 @@ const LoginPage = () => {
                         />
                     </div>
                     <div >
-                        <button className="tablet-button-login">
+                        <button href="/errorPage" className="tablet-button-login">
                             Войти
                         </button>
                     </div>

@@ -1,0 +1,10 @@
+div.name{
+    left: 76px; top: 13px; position: absolute; text-align: center; font-size: 30px;
+}
+.navigate-word {
+    width: 133px; height: 58px; left: 1260px; top: 23px; font-size: 20px;
+}
+.href-form {
+    text-decoration: none;
+    color: black;
+}

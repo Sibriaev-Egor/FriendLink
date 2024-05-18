@@ -1,15 +1,15 @@
-.tablet-button-login {
+.tablet-button-register {
     width: 450px;
     height: 60px;
     left: 495px;
     position: absolute;
-    top: 504px;
+    top: 718px;
     background: #96F486;
 
     color: #117120;
-    font-size: 40px;
+    font-size: 35px;
 }
-.tablet-vvod-login{
+.tablet-vvod-register{
     width: 450px;
     height: 60px;
     left: 495px;

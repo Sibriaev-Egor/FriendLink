@@ -2,6 +2,7 @@ import React from 'react';
 
 import '../mainStyles/style.css'
 import './welcomePage.css'
+import '../mainStyles/reset.css'
 import cactusImage from '../../pictures/images/cactus.png';
 import helloImage from '../../pictures/images/hello.png'
 
@@ -25,7 +26,7 @@ const WelcomePage = () => {
             </div>
                 
             <div className="text_log_reg" style={{top: 571}}>
-                <a href="/" className="href_form"> Регистрация </a>
+                <a href="/register" className="href_form"> Регистрация </a>
             </div>
 
         </div>

@@ -15,7 +15,7 @@ const ErrorPage = () => {
                     {status}
                 </div>
             </div>
-            <div className="head_log_reg">
+            <div className="text_log_reg">
                 <div className='message-error'>
                     {message}
                 </div>
