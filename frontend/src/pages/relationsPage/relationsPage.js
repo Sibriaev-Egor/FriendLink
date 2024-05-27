@@ -52,31 +52,35 @@ const RelationsPage = () => {
                         <label htmlFor="s2" className="slider-nav-item">Подписчики</label>
                         <label htmlFor="s3" className="slider-nav-item">Подписки</label>
                         <label htmlFor="s4" className="slider-nav-item">Чс</label>
-
                     </div>
-                    <div className="slider-line s1">
+
+                    <div className="list-relations">
                         <div className="scroll">
-                            <div className="list-relations">
+                            <div className="list-relations s1">
                                 1 slid
                             </div>
                         </div>
-                        <div className="list-relations s2">
-                            2 slid
+
+                        <div className="scroll">
+                            <div className="list-relations s2">
+                                2 slid
+
+                            </div>
                         </div>
 
-                        <div className="list-relations s3">
-                            3 slid
+                        <div className="scroll">
+                            <div className="list-relations s3">
+                                3 slid
+                            </div>
                         </div>
 
-                        <div className="list-relations s4">
-                            4 slid
+                        <div className="scroll">
+                            <div className="list-relations s4">
+                                4 slid
+                            </div>
                         </div>
-
                     </div>
                 </div>
-
-
-
             </div>
 
 
@@ -84,9 +88,9 @@ const RelationsPage = () => {
     );
 };
 
-let offset = 0;
+/*let offset = 0;
 const sliderLine = document.querySelector('.slider-line');
-/*document.querySelector('.slider-next').addEventListener('click', function () {
+document.querySelector('.slider-next').addEventListener('click', function () {
     offset += 800;
     if (offset > 2400) {
         offset = 0;
