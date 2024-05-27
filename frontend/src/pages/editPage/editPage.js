@@ -11,7 +11,7 @@ import userVector from '../../pictures/vectors/user.png';
 import usersVector from '../../pictures/vectors/users.png';
 const EditPage = () => {
     return (
-        <div className="background">
+        <div>
             <div className="cap"></div>
             <div className="name">FriendLink</div>
             <div>
@@ -25,7 +25,7 @@ const EditPage = () => {
             </div>
 
             <div className="list"></div>
-            <div className="cap_list"></div>
+            <div className="cap-list"></div>
             <div className="ellipse"></div>
             <div className="nick-word">Ник</div>
 
@@ -36,14 +36,14 @@ const EditPage = () => {
                 <a href="/news" className="href-form"> Лента </a>
             </div>
 
-            <div className="select_area" style={{left: 31, top: 278}}></div>
+            <div className="select-area" style={{left: 31, top: 278}}></div>
             <div>
                 <img className="vector-list-user" style={{top: 294}} src={userVector} alt=""/>
             </div>
             <div className="navigate-word navigate-word-user">
                 <a href="/user" className="href-form"> Профиль </a>
             </div>
-            <div className="ellip_cap" style={{height: 124}}></div>
+            <div className="ellip-cap" style={{height: 124}}></div>
             <div className="ellipse" style={{left: 462, top: 98}}></div>
             <div className="nick">
                 Ник
@@ -63,7 +63,7 @@ const EditPage = () => {
                         />
                     </div>
                     <div>
-                        <button className="button-create-post button-create-post-edit" style={{top: 280}}>
+                        <button className="button-post-edit" style={{top: 280}}>
                             Сохранить
                         </button>
                     </div>
@@ -77,7 +77,7 @@ const EditPage = () => {
                         />
                     </div>
                     <div>
-                        <button className="button-create-post button-create-post-edit" style={{top: 374}}>
+                        <button className="button-post-edit" style={{top: 374}}>
                             Сохранить
                         </button>
                     </div>
@@ -91,7 +91,7 @@ const EditPage = () => {
                         />
                     </div>
                     <div>
-                        <button className="button-create-post button-create-post-edit " style={{top: 468}}>
+                        <button className="button-post-edit" style={{top: 468}}>
                             Сохранить
                         </button>
                     </div>
@@ -119,7 +119,7 @@ const EditPage = () => {
                         />
                     </div>
                     <div>
-                        <button className="button-create-post button-create-post-edit" style={{top: 656}}>
+                        <button className="button-post-edit" style={{top: 656}}>
                             Сохранить
                         </button>
                     </div>

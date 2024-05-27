@@ -26,11 +26,11 @@ const NewsPage = () => {
             </div>
 
             <div className="list"></div>
-            <div className="cap_list"></div>
+            <div className="cap-list"></div>
             <div className="ellipse"></div>
             <div className="nick-word">Ник</div>
 
-            <div className="select_area" style={{left: 31, top: 233}}></div>
+            <div className="select-area" style={{left: 31, top: 233}}></div>
             <div>
                 <img className="vector-list" style={{top: 244}} src={homeVector} alt=""/>
             </div>
@@ -45,7 +45,7 @@ const NewsPage = () => {
             </div>
           <div>
               <input
-                  class="poisk poisk-news"
+                  class="poisk"
                   type="text"
                   id="searchInput"
                   placeholder="Введите ник человека, которого хотите найти"

@@ -8,8 +8,8 @@ const LoginPage = () => {
     return (
         <div>
             <div className="name" style={{left: 1184, top: 45, 'text-align': 'center'}}>FriendLink</div>
-            <div className="white_base" style={{width: 733, height: 388, left: 354, top: 256}}></div>
-            <div className="head_log_reg">Войти</div>
+            <div className="white-base" style={{width: 733, height: 388, left: 354, top: 256}}></div>
+            <div className="head-log-reg">Войти</div>
             <div>
                 <form>
                     <div>
@@ -31,7 +31,7 @@ const LoginPage = () => {
                         />
                     </div>
                     <div >
-                        <button href="/errorPage" className="tablet-button-login">
+                        <button href="/userPage" className="tablet-button-login">
                             Войти
                         </button>
                     </div>

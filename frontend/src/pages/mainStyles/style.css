@@ -1,24 +1,16 @@
-.background{
-    width: 1440px;
-    position: relative;
-    background: #EDFFEA
-}
-
-/*.back {
-    width: 814px; height: 516px; left: 313px; top: 14px; position: absolute; background: linear-gradient(75deg, rgba(149.63, 244.37, 134.20, 0.29) 0%, rgba(51.20, 246.08, 19.48, 0.29) 43%, rgba(142.21, 253.28, 124.13, 0.29) 72%, rgba(140.78, 255, 122.19, 0.29) 96%); box-shadow: 150px 150px 150px; filter: blur(150px)
-}*/
 .cactus-page{
-    width: 47px; height: 52px; left: 15px; top: 5px; position: absolute;
-}
-.cactus {
-    width: 234px;
-    height: 293px;
-    left: 603px;
-    top: 66px;
-    position: absolute
+    width: 47px;
+    height: 52px;
+    left: 15px;
+    top: 5px;
+    position: absolute;
 }
 .vector-sign-out{
-    width: 26.25px; height: 26.26px; left: 1260px; top: 18px; position: absolute
+    width: 26.25px;
+    height: 26.26px;
+    left: 1260px;
+    top: 18px;
+    position: absolute
 }
 .vector-list{
     position: absolute; width: 30px; height: 30px; left: 66px;
@@ -45,37 +37,14 @@
     text-transform: capitalize;
     word-wrap: break-word
 }
-.welcome_log_reg{
-    width: 450px;
-    height: 60px;
-    left: 495px;
-    top: 465px;
-    position: absolute;
-    background: #96F486;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
-    border: 1px black solid;
-}
-.text_log_reg{
-    width: 450px; left: 495px;
-    position: absolute;
-    text-align: center;
-    color: #117120;
-    font-size: 40px;
-    font-family: Inter;
-    font-style: italic;
-    font-weight: 200;
-    text-transform: uppercase;
-    word-wrap: break-word;
-}
 
-.white_base{
+.white-base{
     position: absolute;
     background: #FFFDFD;
     border-radius: 95px
 }
 
-.head_log_reg{
+.head-log-reg{
     width: 547px;
     height: 144px;
     left: 447px;
@@ -88,41 +57,7 @@
     font-weight: 400;
     word-wrap: break-word
 }
-
-/*.tablet-button {
-    background: white;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
-    border: 1px black solid;
-
-    text-align: center;
-    color: #117120;
-    font-size: 40px;
-    font-family: Inter;
-    font-style: italic;
-    font-weight: 200;
-    text-transform: uppercase;
-    word-wrap: break-word;
-}
-.tablet-vvod {
-    width: 450px;
-    height: 60px;
-    left: 495px;
-    position: absolute;
-    background: white;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
-    border: 1px black solid;
-
-    text-align: center;
-    color: #CECECE;
-    font-size: 30px;
-    font-family: Inter, serif;
-    font-weight: 400;
-    word-wrap: break-word
-}
-*/
-.hint_words{
+.hint-words{
     width: 450px;
     height: 60px;
     left: 495px;
@@ -150,7 +85,7 @@
      background: white;
      border-radius: 20px;
  }
- .cap_list{
+ .cap-list{
      width: 313px;
      height: 68px;
      left: 31px;
@@ -160,7 +95,6 @@
      border-top-left-radius: 20px;
      border-top-right-radius: 20px
  }
-
 .navigate-word{
     position: absolute;
     text-align: center;
@@ -191,7 +125,7 @@
      background: #D9D9D9;
      border-radius: 9999px
  }
- .ellip_cap{
+ .ellip-cap{
      width: 954px;
      height: 172px;
      left: 444px;
@@ -208,7 +142,7 @@
      position: absolute;
      text-align: center;
      color: black;
-     font-family: Abhaya Libre ExtraBold;
+     font-family: Abhaya Libre ExtraBold, serif;
      font-weight: 800;
      text-transform: capitalize;
      word-wrap: break-word
@@ -220,7 +154,7 @@
      position: absolute;
      border: 1px #A7A7A7 solid
  }
- .select_area{
+ .select-area{
      width: 313px;
      height: 53px;
      left: 31px; top: 278px;
@@ -255,22 +189,3 @@
      font-weight: 300;
      word-wrap: break-word;
  }
-
-
-
-.friend_tablet{
-    width: 954px;
-    left: 430px;
-    position: absolute;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    border: 1px #D4D4D4 solid
-}
-.poisk{
-    width: 954px;
-    height: 50px;
-    position: absolute;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    border: 1px #D4D4D4 solid
-}

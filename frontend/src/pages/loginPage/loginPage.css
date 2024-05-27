@@ -2,16 +2,20 @@
     width: 450px;
     height: 60px;
     left: 495px;
-    position: absolute;
     top: 504px;
+    position: absolute;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
     background: #96F486;
-
     color: #117120;
-    font-size: 40px;
+    font-size: 35px;
 }
 .tablet-vvod-login{
     width: 450px;
     height: 60px;
     left: 495px;
     position: absolute;
+    border: 1px lightgrey solid;
+    font-size: 25px;
+
 }

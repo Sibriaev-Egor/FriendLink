@@ -33,7 +33,7 @@ const UserPage = () => {
             </div>
 
             <div className="list"></div>
-            <div className="cap_list"></div>
+            <div className="cap-list"></div>
             <div className="ellipse"></div>
             <div className="nick-word">Ник</div>
 
@@ -44,7 +44,7 @@ const UserPage = () => {
             <div className="navigate-word navigate-word-lenta">
                 <a href="/news" className="href-form"> Лента </a>
             </div>
-            <div className="select_area" style={{left: 31, top: 278}}></div>
+            <div className="select-area" style={{left: 31, top: 278}}></div>
             <div>
                 <img className="vector-list-user" style={{top: 294}} src={userVector} alt=""/>
             </div>
@@ -52,7 +52,7 @@ const UserPage = () => {
                 <a href="/user" className="href-form"> Профиль </a>
             </div>
 
-            <div className="ellip_cap"></div>
+            <div className="ellip-cap"></div>
             <div className="ellipse" style={{left: 462, top: 98}}></div>
             <div className="nick">
                 Ник
@@ -74,20 +74,20 @@ const UserPage = () => {
             </div>
             <a href="/user">
                 <img className="vector-list-user" style={{left: 461, top: 222}} src={userVector} alt=""/>
-                <div className="navigate_word navigate-word-post">
+                <div className="navigate-word navigate-word-post">
                     <b>Мои посты</b>
                 </div>
             </a>
             <div>
                 <a href="#" id="open_pop_up">
                     <img className="vector-list-user" style={{left: 644, top: 222}} src={postVector} alt=""/>
-                    <div className="navigate_word navigate-word-post" style={{left: 675}}> Создать пост</div>
+                    <div className="navigate-word navigate-word-post" style={{left: 675}}> Создать пост</div>
                 </a>
             </div>
             <div className="pop-up" id="pop_up">
                 <div className="pop_up-container">
                     <div className="pop-up-body">
-                        <div className="navigate_word word">О чём молчишь?</div>
+                        <div className="navigate-word word">О чём молчишь?</div>
                         <div>
                             <textarea minLength="1"
                                       maxLength="500"

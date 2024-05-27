@@ -26,6 +26,10 @@ export const allRoutes = [
         path: pages.REGISTER_PAGE,
         Component: RegisterPage
     },
+
+]
+
+export const allPrivateRoutes = [
     {
         path: pages.EDIT_PAGE,
         Component: EditPage
@@ -42,11 +46,4 @@ export const allRoutes = [
         path: pages.RELATIONS_PAGE /*+ '/:id'*/,
         Component: RelationsPage
     }
-]
-
-export const allPrivateRoutes = [
-
-
-
-
 ]

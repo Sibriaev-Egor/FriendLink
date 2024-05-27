@@ -26,7 +26,7 @@ const RelationsPage = () => {
             </div>
 
             <div className="list"></div>
-            <div className="cap_list"></div>
+            <div className="cap-list"></div>
             <div className="ellipse"></div>
             <div className="nick-word">Ник</div>
 
@@ -50,7 +50,6 @@ const RelationsPage = () => {
                     <div className="slider-line">
                         <div className="list-relations">
                             1 slid
-
                         </div>
                         <div className="list-relations">
                             2 slid

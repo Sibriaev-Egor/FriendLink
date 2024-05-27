@@ -6,8 +6,8 @@ const RegisterPage = () => {
     return (
         <div>
             <div className="name" style={{left: 1184, top: 45, 'text-align': 'center'}}>FriendLink</div>
-            <div className="white_base" style={{width: 733, height: 632, left: 370, top: 240}}></div>
-            <div className="head_log_reg">Регистрация</div>
+            <div className="white-base" style={{width: 733, height: 632, left: 370, top: 240}}></div>
+            <div className="head-log-reg">Регистрация</div>
             <div>
                 <form>
                     <div>
@@ -21,7 +21,7 @@ const RegisterPage = () => {
                     </div>
                     <div>
                         <input
-                            className="tablet-vvod-login"
+                            className="tablet-vvod-register"
                             minLength="4"
                             maxLength="15"
                             style={{top: 412}}

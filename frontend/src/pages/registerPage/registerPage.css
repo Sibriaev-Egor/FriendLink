@@ -5,13 +5,15 @@
     position: absolute;
     top: 718px;
     background: #96F486;
-
+    border-radius: 30px;
     color: #117120;
-    font-size: 35px;
+    font-size: 30px;
 }
 .tablet-vvod-register{
     width: 450px;
     height: 60px;
     left: 495px;
     position: absolute;
+    border: 1px lightgrey solid;
+    font-size: 25px;
 }

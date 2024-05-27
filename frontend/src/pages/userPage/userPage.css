@@ -51,7 +51,10 @@ textarea{
 }
 
 .button-create-post{
-    width: 150px; height: 40px; left: 300px; top: 330px;
+    width: 150px;
+    height: 40px;
+    left: 300px;
+    top: 330px;
     position: absolute;
     background: white;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -60,14 +63,17 @@ textarea{
     cursor: pointer;
     text-align: center;
     color: black;
-    font-size: 20px;
+    font-size: 17px;
     font-family: Inter, serif;
     font-weight: 300;
     word-wrap: break-word;
 }
 
 .word{
-    left: 40px; top: 90px; font-size: 25px; position: absolute;
+    left: 40px;
+    top: 90px;
+    font-size: 25px;
+    position: absolute;
 }
 
 .pop-up-close {

@@ -12,7 +12,7 @@ const message = "К сожалению, страница не найдена. П
 
 const AppRouter = () => {
 
-    const isAuthenticated = false;
+    const isAuthenticated = true;
     return (
         <div className="App">
             <Routes>
