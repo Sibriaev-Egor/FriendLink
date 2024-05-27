@@ -7,38 +7,31 @@ import '../mainStyles/style.css'
 import './loginPage.css'
 import '../mainStyles/reset.css'
 const LoginPage = observer(() => {
+    const {user} = useContext(Context)
     const navigate = useNavigate();
-    const [switcher, setSwitcher] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const handleSubmit = async (event) => {
         event.preventDefault();
-        setSwitcher(true);
         user.setIsAuth(true)
-        await fetch('/api/register/login', {
+        const data = await (await fetch('/api/register/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({email, password})
-        }).then(response => response.json()).then(data => {
-            if(data.token){
-                user.setToken(data.token)
-                user.setIsAuth(true)
-                console.log(user)
-                // localStorage.setItem('user', data.id);
-                navigate(`/user`);
-            }
-            else
-            {
-                alert(data.message);
-            }
-        });
-        
-        // navigate(`/tasksPage`);
+        })).json()
+        if(data.token) {
+            user.setToken(data.token)
+            user.setIsAuth(true)
+            user.setUser([data.user.id, data.user.email, data.user.role])
+            // localStorage.setItem('user', data.id);
+            navigate(`/user`);
+        }
+        else {
+            alert(data.message);
+        }
     };
-
-    const {user} = useContext(Context)
     return (
         <div>
             <div className="name" style={{left: 1184, top: 45, 'text-align': 'center'}}>FriendLink</div>

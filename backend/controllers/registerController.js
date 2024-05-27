@@ -12,7 +12,14 @@ class registerController{
             const hashpassword = await bcrypt.hash(password, 5)
             const id = await User.create(email, hashpassword, nick)
             const token = UniversalTool.generateJWT(id, email, false)
-            return res.json({token})
+            return res.json({
+                token,
+                user:{
+                    id,
+                    email,
+                    role: false
+                }
+            })
         } catch (err) {
             return next(ApiError.internal(err.message));
         }
@@ -25,11 +32,25 @@ class registerController{
             return next(ApiError.badRequest("Неправильный пароль!"))
         }
         const token = UniversalTool.generateJWT(user.id, email, user.role);
-        return res.json({token});
+        return res.json({
+            token, 
+            user:{
+                id: user.id,
+                email,
+                role: user.role
+            }
+        });
     }
     async register_check(req, res) {
         const token = UniversalTool.generateJWT(req.user.id, req.user.email, req.user.role)
-        return res.json({token})
+        return res.json({
+            token,
+            user:{
+                id: req.user.id, 
+                email: req.user.email, 
+                role: req.user.role
+            }
+        })
     }
     async register_reset_password(req, res, next) {
         const password = req.body.password;
