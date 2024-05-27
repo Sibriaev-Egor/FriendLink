@@ -17,9 +17,9 @@ const closePopUp = document.getElementById('pop_up_close');
 const popUp = document.getElementById('pop_up');
 
 const UserPage = () => {
-    let a = true
-    return ( a ? <div>user!!!!1</div> :
-        <div className="background">
+
+    return (
+        <div>
             <div className="cap"></div>
             <div className="name">FriendLink</div>
             <div>
@@ -85,7 +85,7 @@ const UserPage = () => {
                 </a>
             </div>
             <div className="pop-up" id="pop_up">
-                <div className="pop_up-container">
+                <div className="pop-up-container">
                     <div className="pop-up-body">
                         <div className="navigate-word word">О чём молчишь?</div>
                         <div>

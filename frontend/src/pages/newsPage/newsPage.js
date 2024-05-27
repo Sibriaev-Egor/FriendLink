@@ -12,7 +12,7 @@ import usersVector from '../../pictures/vectors/users.png';
 
 const NewsPage = () => {
     return (
-        <div className="background">
+        <div>
             <div className="cap"></div>
             <div className="name">FriendLink</div>
             <div>

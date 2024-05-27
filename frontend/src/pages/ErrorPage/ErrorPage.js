@@ -9,7 +9,6 @@ const message = "К сожалению, страница не найдена. П
 const ErrorPage = () => {
     return (
         <div>
-            
             <div className="head_log_reg">
                 <div className='status-error'>
                     {status}

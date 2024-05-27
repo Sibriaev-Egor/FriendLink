@@ -11,7 +11,7 @@ import userVector from '../../pictures/vectors/user.png';
 
 const RelationsPage = () => {
     return (
-        <div className="background">
+        <div>
 
             <div className="cap"></div>
             <div className="name">FriendLink</div>
@@ -47,23 +47,36 @@ const RelationsPage = () => {
 
             <div className="container">
                 <div className="slider">
-                    <div className="slider-line">
-                        <div className="list-relations">
-                            1 slid
+                    <div className="slider-nav">
+                        <label htmlFor="s1" className="slider-nav-item">Друзья</label>
+                        <label htmlFor="s2" className="slider-nav-item">Подписчики</label>
+                        <label htmlFor="s3" className="slider-nav-item">Подписки</label>
+                        <label htmlFor="s4" className="slider-nav-item">Чс</label>
+
+                    </div>
+                    <div className="slider-line s1">
+                        <div className="scroll">
+                            <div className="list-relations">
+                                1 slid
+                            </div>
                         </div>
-                        <div className="list-relations">
+                        <div className="list-relations s2">
                             2 slid
                         </div>
-                        <div className="list-relations">
+
+                        <div className="list-relations s3">
                             3 slid
                         </div>
-                        <div className="list-relations">
+
+                        <div className="list-relations s4">
                             4 slid
                         </div>
+
                     </div>
                 </div>
-                <button className="slider-prev">Prev</button>
-                <button className="slider-next">Next</button>
+
+
+
             </div>
 
 

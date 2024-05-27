@@ -20,7 +20,7 @@ const AppRouter = observer(() => {
     return (
         <div className="App">
             <Routes>
-                {user.isAuth && allPrivateRoutes.map(({path, Component}) =>
+                {/*user.isAuth &&*/ allPrivateRoutes.map(({path, Component}) =>
                     <Route key={path} path={path} element={<Component/>} exact/>
                 )}
                 {allRoutes.map(({path, Component}) =>
@@ -29,12 +29,12 @@ const AppRouter = observer(() => {
                 <Route path='*' element={
                     <div>
 
-                        <div className="head_log_reg">
+                        <div className="head-log-reg">
                             <div className='status-error'>
                                 {status}
                             </div>
                         </div>
-                        <div className="head_log_reg">
+                        <div className="head-log-reg">
                             <div className='message-error'>
                                 {message}
                             </div>
