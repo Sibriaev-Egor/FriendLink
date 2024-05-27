@@ -17,8 +17,8 @@ const closePopUp = document.getElementById('pop_up_close');
 const popUp = document.getElementById('pop_up');
 
 const UserPage = () => {
-
-    return (
+    let a = true
+    return ( a ? <div>user!!!!1</div> :
         <div className="background">
             <div className="cap"></div>
             <div className="name">FriendLink</div>

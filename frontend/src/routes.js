@@ -25,8 +25,7 @@ export const allRoutes = [
     {
         path: pages.REGISTER_PAGE,
         Component: RegisterPage
-    },
-
+    }
 ]
 
 export const allPrivateRoutes = [
