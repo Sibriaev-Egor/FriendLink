@@ -29,21 +29,24 @@ export const allRoutes = [
     {
         path: pages.EDIT_PAGE,
         Component: EditPage
-    }
-]
-
-export const allPrivateRoutes = [
-    {
-        path: pages.USER_PAGE + '/:id',
-        Component: UserPage
     },
-
     {
         path: pages.NEWS_PAGE,
         Component: NewsPage
     },
     {
-        path: pages.RELATIONS_PAGE + '/:id',
+        path: pages.USER_PAGE /*+ '/:id'*/,
+        Component: UserPage
+    } ,
+    {
+        path: pages.RELATIONS_PAGE /*+ '/:id'*/,
         Component: RelationsPage
     }
+]
+
+export const allPrivateRoutes = [
+
+
+
+
 ]

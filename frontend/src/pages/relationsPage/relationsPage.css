@@ -1,0 +1,55 @@
+
+button{
+    background: none;
+    border: 1px;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: .9rem;
+}
+button:hover{
+    background: #EDFFEA;
+}
+button:active{
+    background: black;
+    color: white;
+}
+
+.list-relations{
+    width: 800px;
+    height: 500px;
+    background: white;
+    border-radius: 20px;
+}
+.container{
+    left: 130px;
+    top: 70px;
+    position: relative;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #EDFFEA;
+    padding: 5px;
+    overflow: hidden;
+}
+.slider{
+
+    width: 800px;
+    height: 500px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    margin: 30px auto;
+    overflow: hidden;
+}
+.slider-line{
+
+    width: 3200px;
+    height: 500px;
+    background: #EDFFEA;
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: all ease 0.5s;
+}
+.navigate-word-no-friend{
+    left: 30px;
+    font-size: 20px;
+}

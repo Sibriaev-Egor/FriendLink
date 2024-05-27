@@ -21,7 +21,10 @@
     width: 26.25px; height: 26.26px; left: 1260px; top: 18px; position: absolute
 }
 .vector-list{
-    width: 30px; height: 30px; left: 66px; position: absolute;
+    position: absolute; width: 30px; height: 30px; left: 66px;
+}
+.vector-list-user{
+    position: absolute; width: 20px; height: 20px; left: 66px;
 }
 .hello{
     width: 190.66px;
@@ -157,14 +160,27 @@
      border-top-left-radius: 20px;
      border-top-right-radius: 20px
  }
- .navigate-word{
-     position: absolute;
-     text-align: center;
-     color: black;
-     font-family: Inter;
-     font-weight: 300;
-     word-wrap: break-word
- }
+
+.navigate-word{
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-family: Inter, serif;
+    font-weight: 300;
+    word-wrap: break-word;
+}
+.navigate-word-v{
+    width: 133px; height: 58px; left: 1260px; top: 23px; font-size: 20px;
+}
+.navigate-word-lenta{
+    position: absolute; left: 133px; top: 249px; font-size: 18px;
+}
+.navigate-word-user{
+    left: 133px; top: 291px; font-size: 18px
+}
+.navigate-word-aboutme{
+    position: absolute; left: 608px; top: 152px; font-size: 15px
+}
 
  .ellipse{
      width: 100px;
@@ -240,21 +256,7 @@
      word-wrap: break-word;
  }
 
- .button_create_post{
-     width: 150px; height: 40px; left: 1150px; top: 570px;
-     position: absolute;
-     background: white;
-     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-     border-radius: 30px;
-     border: 1px black solid;
 
-     text-align: center;
-     color: black;
-     font-size: 20px;
-     font-family: Inter;
-     font-weight: 300;
-     word-wrap: break-word
- }
 
 .friend_tablet{
     width: 954px;
