@@ -27,11 +27,6 @@ const LoginPage = observer(() => {
                 email: data.user.email,
                 role: data.user.role
             });
-            // localStorage.setItem('user', {
-            //     id: data.user.id, 
-            //     email: data.user.email, 
-            //     role: data.user.role
-            // })
             navigate(`/user`);
         }
         else {

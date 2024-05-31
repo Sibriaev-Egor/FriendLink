@@ -19,7 +19,7 @@ export default class UserStore {
         this._nick = nick
     }
     get info() {
-        return JSON.parse(this._info)
+        return JSON.parse(localStorage.getItem('info'))
     }
     get token() {
         return this._token
