@@ -30,21 +30,25 @@ const UserPage = observer(() => {
     const [description, setDescription] = useState(null);
     
     useEffect(() => {
-        fetch(`/api/user/${user.info.id}`).
-        then(response => response.json()).
-        then(response => {
-            setDescription(response.description)
-            if (!user.nick) {
-                user.setNick(response.nick)
-            }
-        });
-    }, [])
+        console.log(user.info)
+    }, [user.info])
+    
+    // useEffect(() => {
+    //     fetch(`/api/user/${user.info.id}`)
+    //     then(response => response.json()).
+    //     then(response => {
+    //         setDescription(response.description)
+    //         if (!user.nick) {
+    //             user.setNick(response.nick)
+    //         }
+    //     });
+    // }, [])
 
-    useEffect(() => {
-        fetch(`/api/post/getAll/${user.info.id}`).
-        then(response => response.json()).
-        then(response => setPostArray(response.posts));
-    }, [])
+    // useEffect(() => {
+    //     fetch(`/api/post/getAll/${user.info.id}`).
+    //     then(response => response.json()).
+    //     then(response => setPostArray(response.posts));
+    // }, [])
     useEffect(() => {
         console.log(postArray)
     }, [postArray])
