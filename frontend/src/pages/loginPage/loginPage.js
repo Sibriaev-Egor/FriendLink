@@ -24,7 +24,7 @@ const LoginPage = observer(() => {
         if(data.token) {
             user.setToken(data.token)
             user.setIsAuth(true)
-            user.setUser([data.user.id, data.user.email, data.user.role])
+            user.setUser(data.user.id, data.user.email, data.user.role)
             // localStorage.setItem('user', data.id);
             navigate(`/user`);
         }

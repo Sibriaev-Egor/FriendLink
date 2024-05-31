@@ -25,21 +25,58 @@ const popUp = document.getElementById('pop_up');
 
 const UserPage = observer(() => {
     const {user} = useContext(Context)
-    const arr = user.user
+    const [postArray, setPostArray] = useState(null);
+    const [userData, setUserData] = useState(null);
+    const [description, setDescription] = useState(null);
+
+    useEffect(() => {
+        fetch(`/api/user/${user.user.id}`).
+        then(response => response.json()).
+        then(response => {
+            setDescription(response.description)
+            if (user.nick == '') {
+                user.setNick(response.nick)
+            }
+        });
+    }, [])
+    
+    useEffect(() => {
+        fetch(`/api/post/getAll/${user.user.id}`).
+        then(response => setPostArray(response.json()));
+    }, [])
 
     return (
         <div>
             <CapComponent></CapComponent>
 
             <ListComponent></ListComponent>
+            {/* <div className="list"></div>
+            <div className="cap-list"></div>
+            <div className="ellipse"></div>
+            <div className="nick-word">{user.nick}</div>
+
+
+            <div>
+                <img className="vector-list" style={{top: 244}} src={homeVector} alt=""/>
+            </div>
+            <div className="navigate-word navigate-word-lenta">
+                <a href="/news" className="href-form"> Лента </a>
+            </div>
+            <div className="select-area" style={{left: 31, top: 278}}></div>
+            <div>
+                <img className="vector-list-user" style={{top: 294}} src={userVector} alt=""/>
+            </div>
+            <div className="navigate-word navigate-word-user">
+                <a href="/user" className="href-form"> Профиль </a>
+            </div> */}
 
             <div className="ellip-cap"></div>
             <div className="ellipse" style={{left: 462, top: 98}}></div>
             <div className="nick">
-                Ник
+                {user.nick}
             </div>
             <div className="navigate-word-aboutme">
-                О себе
+                {description}
             </div>
 
             <div>
