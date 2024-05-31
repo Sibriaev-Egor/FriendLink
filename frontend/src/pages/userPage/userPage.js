@@ -19,7 +19,7 @@ const openPopUp = document.getElementById('open_pop_up');
 const closePopUp = document.getElementById('pop_up_close');
 const popUp = document.getElementById('pop_up');
 
-const UserPage = () => {
+const UserPage = observer(() => {
     const {user} = useContext(Context)
     const arr = user.user
 
@@ -115,7 +115,7 @@ const UserPage = () => {
         </div>
     );
 
-};
+});
 
 /*function toggleModal() {
     popUp.classList.toggle('active');
