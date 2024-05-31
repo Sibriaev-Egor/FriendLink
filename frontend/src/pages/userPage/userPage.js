@@ -31,7 +31,7 @@ const UserPage = observer(() => {
         <div>
             <CapComponent></CapComponent>
 
-           <ListComponent></ListComponent>
+            <ListComponent></ListComponent>
 
             <div className="ellip-cap"></div>
             <div className="ellipse" style={{left: 462, top: 98}}></div>
@@ -88,7 +88,9 @@ const UserPage = observer(() => {
                     <img className="vector-list-user" style={{left: 1270, top: 113}} src={usersVector} alt=""/>
                 </a>
             </div>
+
             <PostComponent></PostComponent>
+            
         </div>
     );
 

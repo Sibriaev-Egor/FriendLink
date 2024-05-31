@@ -6,11 +6,14 @@ import '../mainStyles/reset.css'
 
 import CapComponent from "../../components/capComponent/CapComponent"
 import ListComponent from "../../components/listComponent/ListComponent"
+import FriendComponent from "../../components/friendComponent/FriendComponent"
 
 import cactusImage from '../../pictures/images/cactus.png';
 import signoutVector from '../../pictures/vectors/sign-out.png';
 import homeVector from '../../pictures/vectors/home.png';
 import userVector from '../../pictures/vectors/user.png';
+import trashVector from '../../pictures/vectors/trash.png';
+import blacklistVector from '../../pictures/vectors/file-excel.png';
 
 const RelationsPage = () => {
     return (
@@ -27,30 +30,32 @@ const RelationsPage = () => {
                         <label htmlFor="s3" className="slider-nav-item">Подписки</label>
                         <label htmlFor="s4" className="slider-nav-item">Чс</label>
                     </div>
-
                     <div className="list-relations">
                         <div className="scroll">
                             <div className="list-relations s1">
-                                1 slid
+                                <div className="count">0 друзей</div>
+                                <FriendComponent></FriendComponent>
                             </div>
                         </div>
 
                         <div className="scroll">
                             <div className="list-relations s2">
-                                2 slid
-
+                                <div className="count">0 подписчиков</div>
+                                <FriendComponent></FriendComponent>
                             </div>
                         </div>
 
                         <div className="scroll">
                             <div className="list-relations s3">
-                                3 slid
+                                <div className="count">0 подписок</div>
+                                <FriendComponent></FriendComponent>
                             </div>
                         </div>
 
                         <div className="scroll">
                             <div className="list-relations s4">
-                                4 slid
+                                <div className="count">0 пользователей в черном списке</div>
+                                <FriendComponent></FriendComponent>
                             </div>
                         </div>
                     </div>
