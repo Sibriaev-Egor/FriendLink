@@ -15,12 +15,13 @@ import homeVector from '../../pictures/vectors/home.png';
 import userVector from '../../pictures/vectors/user.png';
 
 export default function ListComponent(props){
+    const {user} = useContext(Context)
     return (
         <div>
             <div className="list"></div>
             <div className="cap-list"></div>
             <div className="ellipse"></div>
-            <div className="nick-word">Ник</div>
+            <div className="nick-word">{user.nick}</div>
 
             <div>
                 <img className="vector-list"  src={homeVector} alt=""/>

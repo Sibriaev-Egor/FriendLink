@@ -1,42 +1,34 @@
 import {makeAutoObservable} from "mobx"
-class User {
-    constructor(id, email, role) {
-        this.id = id;
-        this.email = email;
-        this.role = role;
-    }
-}
 export default class UserStore {
     constructor() {
-        this._isAuth = false
-        this._user = null
-        this._token = ''
-        this._nick = ''
+        this._info = localStorage.getItem('info')
+        this._token = localStorage.getItem('token')
+        this._nick = localStorage.getItem('nick')
         makeAutoObservable(this)
     }
-    setIsAuth(bool) {
-        this._isAuth = bool
-    }
-    setUser(id, email, role) {
-        this._user = new User(id, email, role)
+    setInfo(info) {
+        localStorage.setItem('info', JSON.stringify(info))
+        this._info = info
     }
     setToken(token) {
+        localStorage.setItem('token', token)
         this._token = token
     }
     setNick(nick) {
+        localStorage.setItem('nick', nick)
         this._nick = nick
     }
-    get isAuth() {
-        return this._isAuth
-    }
-    get user() {
-        return this._user
+    get info() {
+        return JSON.parse(this._info)
     }
     get token() {
         return this._token
     }
     get nick() {
         return this._nick
+    }
+    clear() {
+        localStorage.clear()
     }
 
 }

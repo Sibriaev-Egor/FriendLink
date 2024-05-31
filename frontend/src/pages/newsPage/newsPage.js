@@ -1,4 +1,7 @@
-import React from 'react';
+import React, {useContext, useEffect, useState} from 'react'
+import {Context} from '../../index'
+import {observer} from "mobx-react-lite"
+import {useNavigate} from "react-router-dom";
 
 import '../mainStyles/style.css'
 import './newsPage.css'
@@ -15,6 +18,7 @@ import userVector from '../../pictures/vectors/user.png';
 import usersVector from '../../pictures/vectors/users.png';
 
 const NewsPage = () => {
+    const [postArray, setPostArray] = useState(null);
     return (
         <div>
             <CapComponent></CapComponent>
@@ -31,7 +35,18 @@ const NewsPage = () => {
                     placeholder="Введите ник человека, которого хотите найти"
                 />
             </div>
-            <PostComponent></PostComponent>
+            <div className="post-items">
+                {
+                    postArray ? postArray.map((post) => (
+                        <PostComponent
+                            // nick={user.nick}
+                            // text={post.text}
+                            // likes_amount={post.likes_amount}
+                            // date={post.date}
+                        />
+                    )) : 'нет постов'
+                }
+            </div>
         </div>
     );
 };

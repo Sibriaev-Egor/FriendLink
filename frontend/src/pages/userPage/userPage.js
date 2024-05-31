@@ -28,23 +28,26 @@ const UserPage = observer(() => {
     const [postArray, setPostArray] = useState(null);
     const [userData, setUserData] = useState(null);
     const [description, setDescription] = useState(null);
-
+    
     useEffect(() => {
-        fetch(`/api/user/${user.user.id}`).
+        fetch(`/api/user/${user.info.id}`).
         then(response => response.json()).
         then(response => {
             setDescription(response.description)
-            if (user.nick == '') {
+            if (!user.nick) {
                 user.setNick(response.nick)
             }
         });
     }, [])
-    
-    useEffect(() => {
-        fetch(`/api/post/getAll/${user.user.id}`).
-        then(response => setPostArray(response.json()));
-    }, [])
 
+    useEffect(() => {
+        fetch(`/api/post/getAll/${user.info.id}`).
+        then(response => response.json()).
+        then(response => setPostArray(response.posts));
+    }, [])
+    useEffect(() => {
+        console.log(postArray)
+    }, [postArray])
     return (
         <div>
             <CapComponent></CapComponent>
@@ -125,8 +128,19 @@ const UserPage = observer(() => {
                     <img className="vector-list-user" style={{left: 1270, top: 113}} src={usersVector} alt=""/>
                 </a>
             </div>
-
-            <PostComponent></PostComponent>
+            
+            <div className="post-items">
+                {
+                    postArray ? postArray.map((post) => (
+                        <PostComponent
+                            nick={user.nick}
+                            text={post.text}
+                            likes_amount={post.likes_amount}
+                            date={post.date}
+                        />
+                    )) : 'нет постов'
+                }
+            </div>
             
         </div>
     );

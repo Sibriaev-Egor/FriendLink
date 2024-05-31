@@ -13,7 +13,6 @@ const LoginPage = observer(() => {
     const [password, setPassword] = useState('');
     const handleSubmit = async (event) => {
         event.preventDefault();
-        user.setIsAuth(true)
         const data = await (await fetch('/api/register/login', {
             method: 'POST',
             headers: {
@@ -23,9 +22,16 @@ const LoginPage = observer(() => {
         })).json()
         if(data.token) {
             user.setToken(data.token)
-            user.setIsAuth(true)
-            user.setUser(data.user.id, data.user.email, data.user.role)
-            // localStorage.setItem('user', data.id);
+            user.setInfo({
+                id: data.user.id,
+                email: data.user.email,
+                role: data.user.role
+            });
+            // localStorage.setItem('user', {
+            //     id: data.user.id, 
+            //     email: data.user.email, 
+            //     role: data.user.role
+            // })
             navigate(`/user`);
         }
         else {

@@ -11,16 +11,26 @@ import heartFillVector from '../../pictures/vectors/heart-fill.png';
 
 export default function PostComponent(props){
     return (
-        <div>
-            <div className="ellips-cap-post"></div>
-            <div className="ellips-post"></div>
-            <div className="nick-word-post">ник</div>
-            <div className="text-post-post">бла </div>
-
-            <div className="line-post" style={{top: 370}}></div>
-            <div className="line-post" style={{top: 550}}></div>
-            <img className="vector-heart-post" src={heartVector}/>
+        <div className={"post-item"}>
+            <div className="nick-word-post">{props.nick}</div>
+            <div className="text-post-post">{props.text}</div>
+            <div>{'likes ' + props.likes_amount}</div>
+            <div>{'date ' + props.date}</div>
+            <button >
+                <img className="vector-heart-post" src={heartVector}/>
+            </button>
+            
         </div>
+        // <div>
+        //     <div className="ellips-cap-post"></div>
+        //     <div className="ellips-post"></div>
+        //     <div className="nick-word-post">{"Ник"}</div>
+        //     <div className="text-post-post">{props.text}</div>
+        //
+        //     <div className="line-post" style = {{top: 370}}></div>
+        //     <div className="line-post" style = {{top: 550}}></div>
+        //     <img className="vector-heart-post" src={heartVector}/>
+        // </div>
 
     )
 }

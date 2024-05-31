@@ -1,3 +1,23 @@
+.post-items{
+    position: relative;
+    width: 843px;
+    left: 146px;
+    top: 319px;
+    margin: 48px auto 0;
+}
+.post-item{
+    position: relative;
+    margin: 20px 0;
+    width: 954px;
+    height: 345px;
+    border-radius: 20px;
+    border: 1px black solid;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    color: #000;
+}
+
 .ellips-cap-post{
     left: 444px;
     top: 291px;
@@ -18,8 +38,7 @@
     border-radius: 9999px
 }
 .text-post-post{
-    left: 554px;
-    top: 381px;
+    left: 10%;
     width: 702px;
     height: 169px;
     position: absolute;
@@ -30,7 +49,7 @@
     word-wrap: break-word
 }
 .nick-word-post{
-    left: 467px; top: 330px;
+    top: 2%;
     width: 239px;
     height: 47px;
     position: absolute;

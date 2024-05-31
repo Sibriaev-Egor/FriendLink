@@ -16,7 +16,6 @@ const message = "К сожалению, страница не найдена. П
 const AppRouter = observer(() => {
 
     const {user} = useContext(Context)
-    console.log(user.isAuth)
     return (
         <div className="App">
             <Routes>
