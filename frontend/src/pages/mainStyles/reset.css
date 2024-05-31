@@ -1,16 +1,4 @@
-button{
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
-    border: 1px black solid;
 
-    text-align: center;
-    font-family: Inter, serif;
-    font-style: italic;
-    color: #42BB30;
-    font-weight: 200;
-    text-transform: uppercase;
-    word-wrap: break-word;
-}
 input{
     background: white;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
