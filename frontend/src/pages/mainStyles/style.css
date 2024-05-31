@@ -161,7 +161,7 @@
      position: absolute;
      background: #C2F8BA
  }
- .text_post{
+ .text-post{
      width: 702px;
      height: 169px;
      position: absolute;
@@ -172,7 +172,7 @@
      word-wrap: break-word
  }
 
- .create_post{
+ .create-post{
      width: 702px;
      height: 169px;
      left: 559px;

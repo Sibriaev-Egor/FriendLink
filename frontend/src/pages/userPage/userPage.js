@@ -7,6 +7,8 @@ import '../mainStyles/style.css'
 import './userPage.css'
 import '../mainStyles/reset.css'
 
+import PostComponent from "../../components/postComponent/PostComponent"
+
 import cactusImage from '../../pictures/images/cactus.png';
 import signoutVector from '../../pictures/vectors/sign-out.png';
 import homeVector from '../../pictures/vectors/home.png';
@@ -112,6 +114,7 @@ const UserPage = observer(() => {
                     <img className="vector-list-user" style={{left: 1270, top: 113}} src={usersVector} alt=""/>
                 </a>
             </div>
+            <PostComponent></PostComponent>
         </div>
     );
 

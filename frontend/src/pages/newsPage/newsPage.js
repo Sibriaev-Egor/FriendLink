@@ -4,6 +4,8 @@ import '../mainStyles/style.css'
 import './newsPage.css'
 import '../mainStyles/reset.css'
 
+import PostComponent from "../../components/postComponent/PostComponent"
+
 import cactusImage from '../../pictures/images/cactus.png';
 import signoutVector from '../../pictures/vectors/sign-out.png';
 import homeVector from '../../pictures/vectors/home.png';
@@ -51,6 +53,7 @@ const NewsPage = () => {
                   placeholder="Введите ник человека, которого хотите найти"
               />
           </div>
+            <PostComponent></PostComponent>
         </div>
     );
 };

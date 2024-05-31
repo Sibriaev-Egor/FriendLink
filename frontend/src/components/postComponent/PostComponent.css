@@ -1,0 +1,58 @@
+.ellips-cap-post{
+    left: 444px;
+    top: 291px;
+    width: 954px;
+    height: 345px;
+    position: absolute;
+    background: white;
+    border-radius: 20px;
+    border: 1px black solid
+}
+.ellips-post{
+    width: 50px;
+    height: 50px;
+    left: 481px;
+    top: 319px;
+    position: absolute;
+    background: #D9D9D9;
+    border-radius: 9999px
+}
+.text-post-post{
+    left: 554px;
+    top: 381px;
+    width: 702px;
+    height: 169px;
+    position: absolute;
+    color: black;
+    font-size: 25px;
+    font-family: Inter, serif;
+    font-weight: 300;
+    word-wrap: break-word
+}
+.nick-word-post{
+    left: 467px; top: 330px;
+    width: 239px;
+    height: 47px;
+    position: absolute;
+    text-align: center;
+    font-size: 17px;
+    color: black;
+    font-family: Abhaya Libre ExtraBold, serif;
+    font-weight: 800;
+    text-transform: capitalize;
+    word-wrap: break-word
+}
+.line-post{
+    width: 760px;
+    height: 0px;
+    left: 542px;
+    position: absolute;
+    border: 1px #A7A7A7 solid
+}
+.vector-heart-post{
+    width: 40px;
+    height: 40px;
+    left: 1236px;
+    top: 561px;
+    position: absolute
+}
