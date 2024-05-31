@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom";
 
 import '../../../src/pages/mainStyles/style.css'
 import './PostComponent.css'
-import '../../../src/pages/mainStyles/reset.css'
+
 import heartVector from '../../pictures/vectors/heart.png';
 import heartFillVector from '../../pictures/vectors/heart-fill.png';
 
@@ -13,13 +13,15 @@ export default function PostComponent(props){
     return (
         <div className={"post-item"}>
             <div className="nick-word-post">{props.nick}</div>
+            <div className="line-post" style={{top: 70}}></div>
             <div className="text-post-post">{props.text}</div>
-            <div>{'likes ' + props.likes_amount}</div>
-            <div>{'date ' + props.date}</div>
-            <button >
+            <div className="line-post" style={{top: 250}}></div>
+            <div className="likes-word">{'likes ' + props.likes_amount}</div>
+            <div className="date-post">{'date ' + props.date}</div>
+            <button className="btn-heart">
                 <img className="vector-heart-post" src={heartVector}/>
             </button>
-            
+
         </div>
         // <div>
         //     <div className="ellips-cap-post"></div>

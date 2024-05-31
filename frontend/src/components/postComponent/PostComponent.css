@@ -38,7 +38,8 @@
     border-radius: 9999px
 }
 .text-post-post{
-    left: 10%;
+    left: 13%;
+    top: 30%;
     width: 702px;
     height: 169px;
     position: absolute;
@@ -49,12 +50,13 @@
     word-wrap: break-word
 }
 .nick-word-post{
-    top: 2%;
+    left: 1%;
+    top: 10%;
     width: 239px;
     height: 47px;
     position: absolute;
     text-align: center;
-    font-size: 17px;
+    font-size: 20px;
     color: black;
     font-family: Abhaya Libre ExtraBold, serif;
     font-weight: 800;
@@ -64,14 +66,41 @@
 .line-post{
     width: 760px;
     height: 0px;
-    left: 542px;
+    left: 10%;
     position: absolute;
     border: 1px #A7A7A7 solid
 }
 .vector-heart-post{
-    width: 40px;
-    height: 40px;
-    left: 1236px;
-    top: 561px;
+    width: 30px;
+    height: 30px;
+    left: 87%;
+    top: 84%;
     position: absolute
+}
+.date-post{
+    left: 10%;
+    top: 86%;
+    position: absolute;
+    font-family:  Inter, serif;
+    text-transform: capitalize;
+    color: black;
+    font-size: 16px;
+    font-weight: 300;
+    word-wrap: break-word
+}
+.btn-heart{
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+.likes-word{
+    left: 80%;
+    top: 86%;
+    position: absolute;
+    color: black;
+    font-size: 18px;
+    font-family: Inter, serif;
+    font-weight: 300;
+    word-wrap: break-word
 }

@@ -20,7 +20,7 @@ export default function CapComponent(props){
             <div>
                 <img className="cactus-page" src={cactusImage} alt=""/>
             </div>
-            <button className="button-exit">
+            <button>
                 <img className="vector-sign-out" src={signoutVector} alt=""/>
             </button>
         </div>
