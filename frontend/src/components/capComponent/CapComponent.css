@@ -1,0 +1,43 @@
+.cactus-page{
+    width: 47px;
+    height: 52px;
+    left: 15px;
+    top: 5px;
+    position: absolute;
+}
+.vector-sign-out{
+    width: 26.25px;
+    height: 26.26px;
+    left: 1260px;
+    top: 18px;
+    position: absolute
+}
+.cap{
+    width: 1525px;
+    height: 67px;
+    position: absolute;
+    background: white;
+}
+.name {
+    position: absolute;
+    color: black;
+    font-size: 40px;
+    font-family: Inter, serif;
+    font-style: italic;
+    font-weight: 200;
+    text-transform: capitalize;
+    word-wrap: break-word
+}
+.navigate-word-v{
+    width: 133px;
+    height: 58px;
+    left: 1260px;
+    top: 23px;
+    font-size: 20px;
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-family: Inter, serif;
+    font-weight: 300;
+    word-wrap: break-word;
+}
