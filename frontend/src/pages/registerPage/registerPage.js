@@ -54,7 +54,7 @@ const RegisterPage = () => {
                         <input
                             className="tablet-vvod-register"
                             minLength="4"
-                            maxLength="15"
+                            maxLength="32"
                             style={{top: 310}}
                             placeholder="Введите логин"
                             value={email}
@@ -66,7 +66,7 @@ const RegisterPage = () => {
                         <input
                             className="tablet-vvod-register"
                             minLength="4"
-                            maxLength="15"
+                            maxLength="32"
                             style={{top: 412}}
                             placeholder="Введите ник"
                             value={nick}
@@ -77,8 +77,8 @@ const RegisterPage = () => {
                     <div>
                         <input
                             className="tablet-vvod-register"
-                            minLength="7"
-                            maxLength="16"
+                            minLength="4"
+                            maxLength="32"
                             style={{top: 514}}
                             placeholder="Введите пароль"
                             value={password1}
@@ -89,8 +89,8 @@ const RegisterPage = () => {
                     <div>
                         <input
                             className="tablet-vvod-register"
-                            minLength="7"
-                            maxLength="16"
+                            minLength="4"
+                            maxLength="32"
                             style={{top: 616}}
                             placeholder="Повторите пароль"
                             value={password2}

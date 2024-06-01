@@ -27,7 +27,6 @@ const popUp = document.getElementById('pop_up');
 const UserPage = observer(() => {
     const {user} = useContext(Context)
     const [postArray, setPostArray] = useState(null);
-    const [userData, setUserData] = useState(null);
     const [description, setDescription] = useState(null);
     
     useEffect(() => {

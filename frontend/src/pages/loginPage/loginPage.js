@@ -44,7 +44,7 @@ const LoginPage = observer(() => {
                         <input
                             className="tablet-vvod-login"
                             minLength="4"
-                            maxLength="15"
+                            maxLength="32"
                             style={{top: 305}}
                             placeholder="Введите логин"
                             value={email}
@@ -55,8 +55,8 @@ const LoginPage = observer(() => {
                     <div>
                        <input
                           className="tablet-vvod-login"
-                          // minLength="8"
-                          // maxLength="16"
+                          minLength="4"
+                          maxLength="32"
                           style={{top: 402}}
                           placeholder="Введите пароль"
                           type="password"

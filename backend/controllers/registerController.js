@@ -54,6 +54,9 @@ class registerController{
     }
     async register_reset_password(req, res, next) {
         const password = req.body.password;
+        if (!password) {
+            return next(ApiError.internal("Пароль не указан!"))
+        }
         const id = req.user.id;
         const hashpassword = await bcrypt.hash(password, 5);
         try {
