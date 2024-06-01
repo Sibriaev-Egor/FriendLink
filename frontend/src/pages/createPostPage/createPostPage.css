@@ -1,0 +1,48 @@
+
+textarea{
+    width: 954px;
+    height: 172px;
+    left: 444px;
+    top: 320px;
+    position: absolute;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px white solid;
+    resize: none;
+
+    color: black;
+    font-size: 20px;
+    font-family: Inter, serif;
+    font-weight: 300;
+    word-wrap: break-word;
+}
+textarea:focus{
+    outline-width: 0;
+    border: 1px solid grey;
+}
+.button-create-post{
+    width: 150px;
+    height: 40px;
+    left: 1200px;
+    top: 530px;
+    position: absolute;
+    background: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    border: 1px #D4D4D4 solid;
+    cursor: pointer;
+    text-align: center;
+    color: black;
+    font-size: 17px;
+    font-family: Inter, serif;
+    font-weight: 300;
+    word-wrap: break-word;
+}
+
+.word{
+    left: 500px;
+    top: 280px;
+    font-size: 22px;
+    position: absolute;
+}

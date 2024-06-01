@@ -107,7 +107,7 @@ const UserPage = observer(() => {
                 </div>
             </a>
             <div>
-                <a href="#" id="open_pop_up">
+                <a href="/createPost" id="open_pop_up">
                     <img className="vector-list-user" style={{left: 644, top: 222}} src={postVector} alt=""/>
                     <div className="navigate-word navigate-word-post" style={{left: 675}}> Создать пост</div>
                 </a>

@@ -9,6 +9,7 @@ import EditPage from "./pages/editPage/editPage"
 import NewsPage from "./pages/newsPage/newsPage"
 import RelationsPage from "./pages/relationsPage/relationsPage"
 import PoiskPage from "./pages/PoiskPage/PoiskPage"
+import createPostPage from "./pages/createPostPage/createPostPage"
 
 export const allRoutes = [
     {
@@ -49,5 +50,9 @@ export const allPrivateRoutes = [
     {
         path: pages.POISK_PAGE /*+ '/:id'*/,
         Component: PoiskPage
+    },
+    {
+        path: pages.CREATE_POST_PAGE,
+        Component: createPostPage
     }
 ]

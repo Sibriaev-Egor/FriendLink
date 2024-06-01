@@ -8,3 +8,4 @@ export const NEWS_PAGE = '/news';
 export const EDIT_PAGE = '/edit';
 
 export const POISK_PAGE = '/poisk'
+export const CREATE_POST_PAGE = '/createPost'
