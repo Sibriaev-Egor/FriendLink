@@ -27,6 +27,10 @@ export default class UserStore {
     get nick() {
         return this._nick
     }
+    isAuth() {
+        if (this._info) return true
+        return false
+    }
     clear() {
         localStorage.clear()
     }

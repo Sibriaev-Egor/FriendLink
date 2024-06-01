@@ -156,7 +156,7 @@ const UserPage = observer(() => {
             
             <div className="post-items">
                 {
-                    postArray ? postArray.map((post) => (
+                    postArray && postArray.length > 0 ? postArray.map((post) => (
                         <PostComponent
                             nick={nick}
                             text={post.text}
