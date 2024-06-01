@@ -6,8 +6,8 @@ const User = new class UserEntity {
         return data.rows[0]
     }
     async find_id_by_nick(nick) {
-        const data = await pool.query(`SELECT id from user_table WHERE nick=$1`, [nick])
-        return data.rows[0]
+        const data = await pool.query(`SELECT id, nick from user_table WHERE LOWER(nick) LIKE LOWER($1)`, [nick])
+        return data.rows
     }
     async create(email, hashpassword, nick) {
         const data = await pool.query(`INSERT INTO user_table (email, pass, nick) VALUES ($1, $2, $3) RETURNING id`, [email, hashpassword, nick])

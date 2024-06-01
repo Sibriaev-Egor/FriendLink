@@ -7,19 +7,28 @@ import '../mainStyles/style.css'
 import './PoiskPage.css'
 import '../mainStyles/reset.css'
 
-import PostComponent from "../../components/postComponent/PostComponent"
+import FriendComponent from "../../components/friendComponent/FriendComponent"
 import CapComponent from "../../components/capComponent/CapComponent"
 import ListComponent from "../../components/listComponent/ListComponent"
 
-import cactusImage from '../../pictures/images/cactus.png';
-import signoutVector from '../../pictures/vectors/sign-out.png';
-import homeVector from '../../pictures/vectors/home.png';
-import userVector from '../../pictures/vectors/user.png';
-import usersVector from '../../pictures/vectors/users.png';
-import postVector from '../../pictures/vectors/post.png';
-import usereditVector from '../../pictures/vectors/user-edit.png';
-
 const PoiskPage = observer(() => {
+    const {user} = useContext(Context)
+    const [nick, setNick] = useState("");
+    const [users, setUsers] = useState([]);
+    const handleChange = async () => {
+        if (nick.length >= 3) {
+            fetch('/api/user/getUser', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({'nick':'%' + nick + '%'})
+            }).then(response => response.json()).
+            then(response => {
+                if (response) setUsers(response)
+            })
+        }
+    }
     return (
         <div>
             <CapComponent></CapComponent>
@@ -32,7 +41,23 @@ const PoiskPage = observer(() => {
                     type="text"
                     id="searchInput"
                     placeholder="Введите ник человека, которого хотите найти"
+                    type="text"
+                    value={nick}
+                    onChange={(event) => {
+                        setNick(event.target.value)
+                        handleChange()
+                    }}
                 />
+            </div>
+            <div>
+                {
+                    users.length !== 0 ? users.map((oneUser) => (
+                        <FriendComponent
+                            nick={oneUser.nick}
+                            id={oneUser.id}
+                        />
+                    )) : <div className={"word-no-post"}> Пользователи не найедены не найдены!</div>
+                }
             </div>
 
         </div>

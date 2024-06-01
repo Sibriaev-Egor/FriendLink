@@ -23,9 +23,7 @@ class userController{
             const user = await User.get_user_by_nick(nick)
             if (!user) return next(ApiError.badRequest("Пользователь не найден!"));
             return res.json({
-                id: user.id,
-                description: user.description,
-                nick: nick
+                user
             });
         } catch (e){
             return next(ApiError.badRequest(e.message));
