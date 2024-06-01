@@ -19,7 +19,7 @@ const AppRouter = observer(() => {
     return (
         <div className="App">
             <Routes>
-                {/*user.isAuth &&*/ allPrivateRoutes.map(({path, Component}) =>
+                {user.isAuth() && allPrivateRoutes.map(({path, Component}) =>
                     <Route key={path} path={path} element={<Component/>} exact/>
                 )}
                 {allRoutes.map(({path, Component}) =>
