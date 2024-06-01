@@ -33,7 +33,22 @@ const UserPage = observer(() => {
     const [description, setDescription] = useState(null);
     const id = useLocation().pathname.split('/')[2]
     const [nick, setNick] = useState('')
-    
+    const [isFriend, setIsFriend] = useState(false)
+
+    useEffect(() => {
+
+        if (id !== user.info.id){
+            fetch(`/api/friends/check`, {
+                method: 'POST',
+                headers: {
+                    'authorization': 'type ' + user.token,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({id})
+            }).then(response => response.json()).then(response => setIsFriend(response.isFriend));
+        }
+    }, [])
+
     useEffect(() => {
         fetch(`/api/user/${id}`).
         then(response => response.json()).
@@ -57,6 +72,29 @@ const UserPage = observer(() => {
         then(response => response.json()).
         then(response => setPostArray(response.posts));
     }, [])
+
+    const friendSubmit = async (event) => {
+        event.preventDefault();
+        console.log(id)
+        fetch('/api/friends/action', {
+            method: 'POST',
+            headers: {
+                'authorization': 'type ' + user.token,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "id": id,
+                "ban": false
+            })
+        }).then(response => {
+            if (response.status === 200) {
+                setIsFriend(true)
+                navigate(`/user/${id}`)
+            }
+        })
+        
+    };
+
 
     // useEffect(() => {
     //     console.log(postArray)
@@ -95,8 +133,16 @@ const UserPage = observer(() => {
             <div className="navigate-word-aboutme">
                 {description}
             </div>
+            
             {
-                id != user.info.id ? <div></div>:  
+                id != user.info.id ?
+                    isFriend ? <div></div> :
+                    <div>
+                        <button className="btn-plus" onClick={(event)=>friendSubmit(event)}>
+                            <img className="vector-list-user" style={{height: 30, width: 25, left: 1355, top: 106}} src={userplusVector} alt=""/>
+                        </button>
+                    </div>
+                    :  
             
             <div>
                 <div>
@@ -109,12 +155,6 @@ const UserPage = observer(() => {
                     <a href="/edit">
                         <img className="vector-list-user" style={{left: 1320, top: 113}} src={usereditVector} alt=""/>
                     </a>
-                </div>
-
-                <div>
-                    <button className="btn-plus">
-                        <img className="vector-list-user" style={{height: 30, width: 25, left: 1355, top: 106}} src={userplusVector} alt=""/>
-                    </button>
                 </div>
 
                 <a href={`/user/${id}`}>

@@ -129,6 +129,11 @@ const Friends = new class FriendsEntity {
                 and user1_id not in (select user2_id from friends_table where user1_id = $1))`, [id]);
         return data.rows
     }
+    async check(id1, id) {
+        const data = await pool.query(`select count(*) as t from friends_table where user1_id = $1 and user2_id = $2 
+            and ban = false`, [id1, id]);
+        return data.rows[0]
+    }
     async subscriptions(id) {
         const data = await pool.query(`select id, nick from user_table where id in (select user2_id from friends_table 
                 where user1_id = $1 and ban = 'false'

@@ -82,6 +82,17 @@ class friendsController{
             return next(ApiError.internal(e.message))
         }
     }
+    async check(req, res, next) {
+        const id1 = req.user.id
+        const id = req.body.id
+        if (!id) return next(ApiError.badRequest("Пользователь не указан!"))
+        try {
+            const isFriend = (await Friends.check(id1, id)).t === 1
+            return res.json({isFriend})
+        } catch (e) {
+            return next(ApiError.internal(e.message))
+        }
+    }
     
 
 }

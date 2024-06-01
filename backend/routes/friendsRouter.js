@@ -9,5 +9,6 @@ router.get('/getSubscriptionsList', friendsController.subscriptions);
 router.get('/getBanList', authMiddleware, friendsController.banList)
 router.post('/action', authMiddleware, friendsController.doAction)
 router.post('/delete', authMiddleware, friendsController.deleteSome)
+router.post('/check', authMiddleware, friendsController.check)
 
 module.exports = router;
