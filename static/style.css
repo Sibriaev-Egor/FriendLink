@@ -3,11 +3,6 @@
     position: relative;
     background: #EDFFEA
 }
-
-/*.back {
-    width: 814px; height: 516px; left: 313px; top: 14px; position: absolute; background: linear-gradient(75deg, rgba(149.63, 244.37, 134.20, 0.29) 0%, rgba(51.20, 246.08, 19.48, 0.29) 43%, rgba(142.21, 253.28, 124.13, 0.29) 72%, rgba(140.78, 255, 122.19, 0.29) 96%); box-shadow: 150px 150px 150px; filter: blur(150px)
-}*/
-
 .cactus {
     width: 234px;
     height: 293px;
@@ -63,7 +58,6 @@
     background: #FFFDFD;
     border-radius: 95px
 }
-
 .head_log_reg{
     width: 547px;
     height: 144px;
@@ -77,7 +71,6 @@
     font-weight: 400;
     word-wrap: break-word
 }
-
 .tablet_button {
     width: 450px;
     height: 60px;
@@ -128,7 +121,6 @@
     font-weight: 400;
     word-wrap: break-word
 }
-
 .cap{
     width: 1525px;
     height: 67px;
@@ -249,7 +241,7 @@
      text-align: center;
      color: black;
      font-size: 20px;
-     font-family: Inter;
+     font-family: Inter, serif;
      font-weight: 300;
      word-wrap: break-word
  }

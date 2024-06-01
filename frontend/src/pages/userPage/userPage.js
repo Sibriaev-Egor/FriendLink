@@ -169,12 +169,13 @@ function windowOnClick(event) {
 openPopUp.addEventListener("click", toggleModal);
 closePopUp.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
-
+*/
 openPopUp.addEventListener('click', function (e) {
     e.preventDefault();
     popUp.classList.add('active');
 })
 closePopUp.addEventListener('click', () => {
+
     popUp.classList.remove('active');
-})*/
+})
 export default UserPage;
