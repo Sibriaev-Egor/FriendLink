@@ -21,31 +21,31 @@ import usereditVector from '../../pictures/vectors/user-edit.png';
 
 const CreatePostPage = observer(() => {
     const {user} = useContext(Context)
-
-    const [postArray, setPostArray] = useState(null);
-    const [description, setDescription] = useState(null);
+    const navigate = useNavigate();
+    const [text, setText] = useState("");
+    const [description, setDescription] = useState("")
 
     useEffect(() => {
         fetch(`/api/user/${user.info.id}`).
         then(response => response.json()).
         then(response => {
             setDescription(response.description)
-            if (!user.nick) {
-                user.setNick(response.nick)
-            }
         });
     }, [])
-
-    useEffect(() => {
-        fetch(`/api/post/getAll/${user.info.id}`, {
-            method: 'GET',
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        fetch('/api/post/create', {
+            method: 'POST',
             headers: {
-                'authorization': 'type ' + user.token
-            }
-        }).
-        then(response => response.json()).
-        then(response => setPostArray(response.posts));
-    }, [])
+                'authorization': 'type ' + user.token,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({text})
+        }).then(response => {
+            if (response.status === 200) navigate(`/user`);
+            else response.json().then(response => alert(response.message))
+        })
+    };
 
 
     return (
@@ -87,8 +87,15 @@ const CreatePostPage = observer(() => {
             </div>
             <div>
                 <div className="word">Расскажи, не молчи!</div>
-                <textarea></textarea>
-                <button className="button-create-post">Рассказать</button>
+                <form onSubmit={handleSubmit}>
+                    <textarea
+                        minLength="1"
+                        value={text}
+                        onChange={(event) => setText(event.target.value)}
+                        required></textarea>
+                    <button className="button-create-post" type="submit">Рассказать</button>
+                </form>
+                
             </div>
 
         </div>
