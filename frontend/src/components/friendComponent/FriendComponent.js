@@ -19,7 +19,7 @@ export default function FriendComponent(props){
         <div>
             <div className="tablet-friend">
                 <div className="ellipse-friend"></div>
-                <div className="nick-word-friend">Ник</div>
+                <div className="nick-word-friend">{props.nick}</div>
                 <img className="vector-1" src={trashVector}/>
                 <img className="vector-2" src={blacklistVector}/>
                 <img className="vector-3" src={userplusVector}/>

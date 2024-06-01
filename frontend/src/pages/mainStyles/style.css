@@ -145,7 +145,8 @@
 
 .word-no-post{
     position: absolute;
-    left: 50%;
+    left: 35%;
+    top: 40%;
     text-align: center;
     color: black;
     font-size: 25px;

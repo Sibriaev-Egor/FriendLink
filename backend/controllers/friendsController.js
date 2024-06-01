@@ -4,7 +4,7 @@ UniversalTool = require("../utils/UniversalTool")
 
 class friendsController{
     async friends(req, res, next) {
-        const token = req.headers.authorization.split(' ')[1]
+        const token = req.headers.authorization ? req.headers.authorization.split(' ')[1] : null
         if (!(token || req.query.id)) return next(ApiError.badRequest("Пользователь не указан!"))
         let decoder;
         try {
@@ -21,7 +21,7 @@ class friendsController{
         }
     }
     async subs(req, res, next) {
-        const token = req.headers.authorization.split(' ')[1]
+        const token = req.headers.authorization ? req.headers.authorization.split(' ')[1] : null
         if (!(token || req.query.id)) return next(ApiError.badRequest("Пользователь не указан!"))
         let decoder;
         try {
@@ -38,7 +38,7 @@ class friendsController{
         }
     }
     async subscriptions(req, res, next) {
-        const token = req.headers.authorization.split(' ')[1]
+        const token = req.headers.authorization ? req.headers.authorization.split(' ')[1] : null
         if (!(token || req.query.id)) return next(ApiError.badRequest("Пользователь не указан!"))
         let decoder;
         try {

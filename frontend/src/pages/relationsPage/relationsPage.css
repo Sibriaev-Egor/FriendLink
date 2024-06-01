@@ -17,20 +17,20 @@
     border-radius: 20px;
     border: 1px #D4D4D4 solid
 }
-button{
-    background: none;
-    border: 1px;
-    border-radius: 4px;
-    padding: 10px 20px;
-    font-size: .9rem;
-}
-button:hover{
-    background: #EDFFEA;
-}
-button:active{
-    background: black;
-    color: white;
-}
+/*button{*/
+/*    background: none;*/
+/*    border: 1px;*/
+/*    border-radius: 4px;*/
+/*    padding: 10px 20px;*/
+/*    font-size: .9rem;*/
+/*}*/
+/*button:hover{*/
+/*    background: #EDFFEA;*/
+/*}*/
+/*button:active{*/
+/*    background: black;*/
+/*    color: white;*/
+/*}*/
 .list-relations{
     width: 800px;
     height: 500px;
