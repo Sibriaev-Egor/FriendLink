@@ -40,7 +40,7 @@ export const allPrivateRoutes = [
         Component: NewsPage
     },
     {
-        path: pages.USER_PAGE /*+ '/:id'*/,
+        path: pages.USER_PAGE + '/:id',
         Component: UserPage
     } ,
     {

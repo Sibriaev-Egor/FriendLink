@@ -14,6 +14,15 @@ class postController{
             return next(ApiError.internal(e.message))
         }
     }
+    async news(req, res, next) {
+        const userId = req.user.id
+        try {
+            const posts = await Post.news(userId)
+            return res.json({posts})
+        } catch (e) {
+            return next(ApiError.internal(e.message))
+        }
+    }
     async get_one(req, res, next) {
         const id = req.params.id
         if (!id) return next(ApiError.badRequest("Пост не найден!"))

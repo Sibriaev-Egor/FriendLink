@@ -48,6 +48,23 @@ const Post = new class PostEntity {
             on post_table.id = t.post_id WHERE user_id=$1 order by post_table.date desc`, [postUserId, userId])
         return data.rows
     }
+    async news(userId) {
+        const data = await pool.query(`SELECT post_table.*, COALESCE(t.amount, 0) as likes_amount,
+            (SELECT nick from user_table where id = user_id) as nick,
+            (select count(*)=1 from like_table where user_id = $1 and post_id = t.post_id) as is_like
+            FROM post_table left join 
+            (select count(*) as amount, post_id from like_table where post_id in 
+            (select id from post_table where user_id in 
+            (select id from user_table where id in (select friends_table.user2_id 
+            from friends_table join friends_table as t2 on 
+            friends_table.user1_id = t2.user2_id  where friends_table.user1_id = $1 and friends_table.ban = 'false'))
+            ) group by post_id) as t 
+            on post_table.id = t.post_id WHERE user_id in (select friends_table.user2_id 
+            from friends_table join friends_table as t2 on 
+            friends_table.user1_id = t2.user2_id  where friends_table.user1_id = $1 and friends_table.ban = 'false') 
+            order by post_table.date desc LIMIT 50`, [userId])
+        return data.rows
+    }
     async get_one(id) {
         const data = await pool.query(`select post_table.*, (select count(*) from like_table where post_id = $1) 
             as likes_amount from post_table where id = $1`, [id])

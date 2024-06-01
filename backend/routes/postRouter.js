@@ -5,6 +5,7 @@ const authMiddleware = require("../middleware/authMiddleware")
 
 router.get('/getAll/:id', authMiddleware, postController.get_all);
 router.get('/get/:id', postController.get_one);
+router.get('/news', authMiddleware, postController.news);
 router.post('/create', authMiddleware, postController.create);
 router.post('/edit', authMiddleware, postController.edit);
 router.post('/like', authMiddleware, postController.like);
