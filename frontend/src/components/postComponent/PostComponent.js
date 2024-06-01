@@ -35,7 +35,11 @@ export default function PostComponent(props){
     }
     return (
         <div className={"post-item"}>
-            <div className="nick-word-post">{props.nick}</div>
+            <div className="nick-word-post">{
+                <a href={`/user/${props.postUserId}`} className="href-form">
+                    {props.nick}
+                </a>
+            }</div>
             <div className="line-post" style={{top: 70}}></div>
             <div className="text-post-post">{props.text}</div>
             <div className="line-post" style={{top: 250}}></div>

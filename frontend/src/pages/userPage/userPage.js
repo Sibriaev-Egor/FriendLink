@@ -26,6 +26,7 @@ const popUp = document.getElementById('pop_up');
 
 const UserPage = observer(() => {
     const {user} = useContext(Context)
+    const navigate = useNavigate()
     const [postArray, setPostArray] = useState(null);
     const [description, setDescription] = useState(null);
     const id = useLocation().pathname.split('/')[2]
@@ -39,7 +40,8 @@ const UserPage = observer(() => {
             if (!user.nick) {
                 user.setNick(response.nick)
             }
-            setNick(user.nick)
+            setNick(response.nick)
+            if (!response.nick) navigate('/errorPage')
         });
     }, [])
 
@@ -86,55 +88,60 @@ const UserPage = observer(() => {
             <div className="ellip-cap"></div>
             <div className="ellipse" style={{left: 462, top: 98}}></div>
             <div className="nick">
-                {user.nick}
+                {nick}
             </div>
             <div className="navigate-word-aboutme">
                 {description}
             </div>
-
+            {
+                id != user.info.id ? <div></div>:  
+            
             <div>
-                <a href="/edit">
-                    <img className="vector-list-user" style={{left: 644, top: 222}} src={postVector} alt=""/>
-                </a>
-            </div>
-
-            <div>
-                <a href="/edit">
-                    <img className="vector-list-user" style={{left: 1320, top: 113}} src={usereditVector} alt=""/>
-                </a>
-            </div>
-            <a href="/user">
-                <img className="vector-list-user" style={{left: 461, top: 222}} src={userVector} alt=""/>
-                <div className="navigate-word navigate-word-post">
-                    <b>Мои посты</b>
+                <div>
+                    <a href="/edit">
+                        <img className="vector-list-user" style={{left: 644, top: 222}} src={postVector} alt=""/>
+                    </a>
                 </div>
-            </a>
-            <div>
-                <a href="/createPost" id="open_pop_up">
-                    <img className="vector-list-user" style={{left: 644, top: 222}} src={postVector} alt=""/>
-                    <div className="navigate-word navigate-word-post" style={{left: 675}}> Создать пост</div>
+            
+                <div>
+                    <a href="/edit">
+                        <img className="vector-list-user" style={{left: 1320, top: 113}} src={usereditVector} alt=""/>
+                    </a>
+                </div>
+                <a href={`/user/${id}`}>
+                    <img className="vector-list-user" style={{left: 461, top: 222}} src={userVector} alt=""/>
+                    <div className="navigate-word navigate-word-post">
+                        <b>Мои посты</b>
+                    </div>
                 </a>
-            </div>
-            <div className="pop-up" id="pop_up">
-                <div className="pop-up-container">
-                    <div className="pop-up-body">
-                        <div className="navigate-word word">О чём молчишь?</div>
-                        <div>
+                <div>
+                    <a href="/createPost" id="open_pop_up">
+                        <img className="vector-list-user" style={{left: 644, top: 222}} src={postVector} alt=""/>
+                        <div className="navigate-word navigate-word-post" style={{left: 675}}> Создать пост</div>
+                    </a>
+                </div>
+                <div className="pop-up" id="pop_up">
+                    <div className="pop-up-container">
+                        <div className="pop-up-body">
+                            <div className="navigate-word word">О чём молчишь?</div>
+                            <div>
                             <textarea minLength="1"
                                       maxLength="500"
                                       name="comment"></textarea>
+                            </div>
+                            <div>
+                                <button className="button-create-post">
+                                    Рассказать
+                                </button>
+                            </div>
+                            <div className="pop-up-close" id="pop_up_close"></div>
                         </div>
-                        <div>
-                            <button className="button-create-post">
-                                Рассказать
-                            </button>
-                        </div>
-                        <div className="pop-up-close" id="pop_up_close"></div>
                     </div>
                 </div>
             </div>
+            }
             <div>
-                <a href="/relations">
+                <a href={`/relations/${id}`}>
                     <img className="vector-list-user" style={{left: 1270, top: 113}} src={usersVector} alt=""/>
                 </a>
             </div>
@@ -143,12 +150,13 @@ const UserPage = observer(() => {
                 {
                     postArray ? postArray.map((post) => (
                         <PostComponent
-                            nick={user.nick}
+                            nick={nick}
                             text={post.text}
                             likes_amount={post.likes_amount}
                             date={post.date}
                             isLike={post.is_like}
                             postId={post.id}
+                            postUserId={id}
                         />
                     )) : <div className={"word-no-post"}> Нет постов</div>
                 }

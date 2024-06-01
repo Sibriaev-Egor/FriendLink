@@ -34,7 +34,7 @@ export default function ListComponent(props){
                 <img className="vector-list-user" src={userVector} alt=""/>
             </div>
             <div className="navigate-word navigate-word-user">
-                <a href="/user" className="href-form"> Профиль </a>
+                <a href={`/user/${user.info.id}`} className="href-form"> Профиль </a>
             </div>
             <div>
                 <img className="vector-list-search" src={searchVector} alt=""/>

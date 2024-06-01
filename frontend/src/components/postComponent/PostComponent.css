@@ -5,6 +5,10 @@
     top: 319px;
     margin: 48px auto 0;
 }
+.href-form {
+    text-decoration: none;
+    color: black;
+}
 .post-item{
     position: relative;
     margin: 20px 0;

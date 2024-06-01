@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react'
 import {Context} from '../../index'
 import {observer} from "mobx-react-lite"
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useLocation} from "react-router-dom";
 
 import '../mainStyles/style.css'
 import './relationsPage.css'
@@ -19,24 +19,26 @@ const RelationsPage = observer(() => {
     const [friendsArray, setFriendsArray] = useState([]);
     const [bansArray, setBansArray] = useState([]);
     const [switcher, setSwitcher] = useState(1)
+    const location = useLocation();
+    const id = useLocation().pathname.split('/')[2]
 
     useEffect(() => {
         console.log(user.info.id)
-        fetch(`/api/friends/getFriendsList?id=${user.info.id}`).
+        fetch(`/api/friends/getFriendsList?id=${id}`).
         then(response => response.json()).
         then(response => {
             if (response.rows) setFriendsArray(response.rows)
         });
     }, [])
     useEffect(() => {
-        fetch(`/api/friends/getSubsList?id=${user.info.id}`).
+        fetch(`/api/friends/getSubsList?id=${id}`).
         then(response => response.json()).
         then(response => {
             if (response.rows) setSubsArray(response.rows)
         });
     }, [])
     useEffect(() => {
-        fetch(`/api/friends/getSubscriptionsList?id=${user.info.id}`).
+        fetch(`/api/friends/getSubscriptionsList?id=${id}`).
         then(response => response.json()).
         then(response => {
             if (response.rows) setSubscriptionsArray(response.rows)
@@ -78,9 +80,11 @@ const RelationsPage = observer(() => {
                         <button htmlFor="s3" className="slider-nav-item" onClick={() => setSwitcher(3)}>
                             Подписки
                         </button>
-                        <button htmlFor="s4" className="slider-nav-item" onClick={() => setSwitcher(4)}>
-                            Чс
-                        </button>
+                        {id != user.info.id ? <div></div>:
+                            <button htmlFor="s4" className="slider-nav-item" onClick={() => setSwitcher(4)}>
+                                Чс
+                            </button>
+                        }
                         {/*<label htmlFor="s2" className="slider-nav-item">Подписчики</label>*/}
                         {/*<label htmlFor="s3" className="slider-nav-item">Подписки</label>*/}
                         {/*<label htmlFor="s4" className="slider-nav-item">Чс</label>*/}
@@ -130,6 +134,7 @@ const RelationsPage = observer(() => {
                                     </div>
                                 </div>
                                     :
+                                id != user.info.id ? <div></div>:
                                 <div className="scroll">
                                     <div className="list-relations s4">
                                         <div className="count">{bansArray.length + " пользователей в черном списке"}</div>

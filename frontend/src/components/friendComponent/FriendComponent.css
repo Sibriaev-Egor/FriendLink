@@ -9,6 +9,10 @@
     background: #C2F8BA;
     border-radius: 20px;
 }
+.href-form {
+    text-decoration: none;
+    color: black;
+}
 .ellipse-friend{
     width: 60px;
     height: 60px;

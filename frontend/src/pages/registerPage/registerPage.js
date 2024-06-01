@@ -33,7 +33,7 @@ const RegisterPage = () => {
                     email: data.user.email,
                     role: data.user.role
                 });
-                navigate(`/user`);
+                navigate(`/edit/${data.user.id}`);
             }
             else {
                 alert(data.message);

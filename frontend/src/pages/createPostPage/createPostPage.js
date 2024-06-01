@@ -42,7 +42,7 @@ const CreatePostPage = observer(() => {
             },
             body: JSON.stringify({text})
         }).then(response => {
-            if (response.status === 200) navigate(`/user`);
+            if (response.status === 200) navigate(`/edit/${user.info.id}`);
             else response.json().then(response => alert(response.message))
         })
     };
@@ -63,7 +63,7 @@ const CreatePostPage = observer(() => {
             </div>
 
             <div>
-                <a href="/edit">
+                <a href={`/edit/${user.info.id}`}>
                     <img className="vector-list-user" style={{left: 644, top: 222}} src={postVector} alt=""/>
                 </a>
             </div>
@@ -73,7 +73,7 @@ const CreatePostPage = observer(() => {
                     <img className="vector-list-user" style={{left: 1320, top: 113}} src={usereditVector} alt=""/>
                 </a>
             </div>
-            <a href="/user">
+            <a href={`/user/${user.info.id}`}>
                 <img className="vector-list-user" style={{left: 461, top: 222}} src={userVector} alt=""/>
                 <div className="navigate-word navigate-word-post">
                     Мои посты

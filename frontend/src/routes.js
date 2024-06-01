@@ -44,11 +44,11 @@ export const allPrivateRoutes = [
         Component: UserPage
     } ,
     {
-        path: pages.RELATIONS_PAGE /*+ '/:id'*/,
+        path: pages.RELATIONS_PAGE  + '/:id',
         Component: RelationsPage
     },
     {
-        path: pages.POISK_PAGE /*+ '/:id'*/,
+        path: pages.POISK_PAGE,
         Component: PoiskPage
     },
     {

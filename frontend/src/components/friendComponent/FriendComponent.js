@@ -22,7 +22,11 @@ export default function FriendComponent(props){
         <div>
             <div className="tablet-friend">
                 <div className="ellipse-friend"></div>
-                <div className="nick-word-friend">{props.nick}</div>
+                <div className="nick-word-friend">
+                <a href={`/user/${props.id}`} className="href-form">
+                    {props.nick}
+                </a>
+            </div>
                 <button className="btn-friend">
                     <img className="vector-1" src={trashVector}/>
                 </button>
@@ -33,7 +37,6 @@ export default function FriendComponent(props){
                     <img className="vector-3" src={userplusVector}/>
                 </button>
             </div>
-
         </div>
     )
 }
