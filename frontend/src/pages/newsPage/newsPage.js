@@ -18,7 +18,23 @@ import userVector from '../../pictures/vectors/user.png';
 import usersVector from '../../pictures/vectors/users.png';
 
 const NewsPage = () => {
-    const [postArray, setPostArray] = useState(null);
+    const {user} = useContext(Context)
+    const [postArray, setPostArray] = useState([]);
+
+    useEffect(() => {
+        fetch(`/api/post/news`, {
+            method: 'GET',
+            headers: {
+                'authorization': 'type ' + user.token
+            }
+        }).
+        then(response => response.json()).
+        then(response => {
+            setPostArray(response.posts)
+            console.log(response.posts)
+        });
+    }, [])
+    
     return (
         <div>
             <CapComponent></CapComponent>
@@ -29,12 +45,15 @@ const NewsPage = () => {
 
             <div className="post-items">
                 {
-                    postArray ? postArray.map((post) => (
+                    postArray.length > 0 ? postArray.map((post) => (
                         <PostComponent
-                            // nick={user.nick}
-                            // text={post.text}
-                            // likes_amount={post.likes_amount}
-                            // date={post.date}
+                            nick={post.nick}
+                            text={post.text}
+                            likes_amount={post.likes_amount}
+                            date={post.date}
+                            isLike={post.is_like}
+                            postId={post.id}
+                            postUserId={post.user_id}
                         />
                     )) : <div className={"word-no-post"}> Нет постов</div>
                 }

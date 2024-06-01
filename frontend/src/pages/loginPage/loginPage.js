@@ -27,7 +27,7 @@ const LoginPage = observer(() => {
                 email: data.user.email,
                 role: data.user.role
             });
-            navigate(`/user`);
+            navigate(`/user/${data.user.id}`);
         }
         else {
             alert(data.message);

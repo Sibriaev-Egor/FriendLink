@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react'
 import {Context} from '../../index'
 import {observer} from "mobx-react-lite"
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useLocation} from "react-router-dom";
 
 import '../mainStyles/style.css'
 import './userPage.css'
@@ -28,20 +28,23 @@ const UserPage = observer(() => {
     const {user} = useContext(Context)
     const [postArray, setPostArray] = useState(null);
     const [description, setDescription] = useState(null);
+    const id = useLocation().pathname.split('/')[2]
+    const [nick, setNick] = useState('')
     
     useEffect(() => {
-        fetch(`/api/user/${user.info.id}`).
+        fetch(`/api/user/${id}`).
         then(response => response.json()).
         then(response => {
             setDescription(response.description)
             if (!user.nick) {
                 user.setNick(response.nick)
             }
+            setNick(user.nick)
         });
     }, [])
 
     useEffect(() => {
-        fetch(`/api/post/getAll/${user.info.id}`, {
+        fetch(`/api/post/getAll/${id}`, {
             method: 'GET',
             headers: {
                 'authorization': 'type ' + user.token
