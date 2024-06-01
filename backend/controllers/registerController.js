@@ -8,7 +8,7 @@ class registerController{
         const {email, password, nick} = req.body;
         try {
             if (await User.find_id_by_email(email)) return next(ApiError.badRequest("Пользователь с такой почтой уже зарегестрирован!"))
-            if (await User.find_id_by_nick(nick)) return next(ApiError.badRequest("Ник уже используется!"))
+            if (!(await User.find_id_by_nick(nick))) return next(ApiError.badRequest("Ник уже используется!"))
             const hashpassword = await bcrypt.hash(password, 5)
             const id = await User.create(email, hashpassword, nick)
             const token = UniversalTool.generateJWT(id, email, false)

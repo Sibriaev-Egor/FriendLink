@@ -33,7 +33,6 @@ const RegisterPage = () => {
                     email: data.user.email,
                     role: data.user.role
                 });
-                // localStorage.setItem('user', data.id);
                 navigate(`/user`);
             }
             else {
