@@ -81,6 +81,13 @@
     top: 84%;
     position: absolute
 }
+.vector-trash-post{
+    width: 30px;
+    height: 30px;
+    left: 87%;
+    top: 10%;
+    position: absolute
+}
 .date-post{
     left: 10%;
     top: 86%;

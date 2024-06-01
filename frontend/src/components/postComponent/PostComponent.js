@@ -8,6 +8,7 @@ import './PostComponent.css'
 
 import heartVector from '../../pictures/vectors/heart.png';
 import heartFillVector from '../../pictures/vectors/heart-fill.png';
+import trashVector from '../../pictures/vectors/trash.png'
 
 export default function PostComponent(props){
     const {user} = useContext(Context)
@@ -47,6 +48,9 @@ export default function PostComponent(props){
             <div className="date-post">{'date ' + props.date}</div>
             <button className="btn-heart" onClick={handleSubmit}>
                 <img className="vector-heart-post" src={isLike ? heartFillVector : heartVector}/>
+            </button>
+            <button className="btn-heart">
+                <img className="vector-trash-post" src={trashVector}/>
             </button>
 
         </div>

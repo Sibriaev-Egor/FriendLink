@@ -19,6 +19,7 @@ import usersVector from '../../pictures/vectors/users.png';
 import postVector from '../../pictures/vectors/post.png';
 import usereditVector from '../../pictures/vectors/user-edit.png';
 import userplusVector from '../../pictures/vectors/user-plus.png';
+import trashVector from '../../pictures/vectors/trash.png'
 
 
 const openPopUp = document.getElementById('open_pop_up');
