@@ -8,6 +8,7 @@ import UserPage from "./pages/userPage/userPage"
 import EditPage from "./pages/editPage/editPage"
 import NewsPage from "./pages/newsPage/newsPage"
 import RelationsPage from "./pages/relationsPage/relationsPage"
+import PoiskPage from "./pages/PoiskPage/PoiskPage"
 
 export const allRoutes = [
     {
@@ -44,5 +45,9 @@ export const allPrivateRoutes = [
     {
         path: pages.RELATIONS_PAGE /*+ '/:id'*/,
         Component: RelationsPage
+    },
+    {
+        path: pages.POISK_PAGE /*+ '/:id'*/,
+        Component: PoiskPage
     }
 ]

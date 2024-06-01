@@ -142,3 +142,14 @@
      font-weight: 300;
      word-wrap: break-word;
  }
+
+.word-no-post{
+    position: absolute;
+    left: 50%;
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    font-family: Inter, serif;
+    font-weight: 300;
+    word-wrap: break-word;
+}

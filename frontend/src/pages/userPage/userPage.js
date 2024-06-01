@@ -19,6 +19,7 @@ import usersVector from '../../pictures/vectors/users.png';
 import postVector from '../../pictures/vectors/post.png';
 import usereditVector from '../../pictures/vectors/user-edit.png';
 
+
 const openPopUp = document.getElementById('open_pop_up');
 const closePopUp = document.getElementById('pop_up_close');
 const popUp = document.getElementById('pop_up');
@@ -142,7 +143,7 @@ const UserPage = observer(() => {
                             likes_amount={post.likes_amount}
                             date={post.date}
                         />
-                    )) : 'нет постов'
+                    )) : <div className={"word-no-post"}> Нет постов</div>
                 }
             </div>
             

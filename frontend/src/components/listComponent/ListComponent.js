@@ -13,6 +13,7 @@ import cactusImage from '../../pictures/images/cactus.png';
 import signoutVector from '../../pictures/vectors/sign-out.png';
 import homeVector from '../../pictures/vectors/home.png';
 import userVector from '../../pictures/vectors/user.png';
+import searchVector from '../../pictures/vectors/search.png';
 
 export default function ListComponent(props){
     const {user} = useContext(Context)
@@ -24,7 +25,7 @@ export default function ListComponent(props){
             <div className="nick-word">{user.nick}</div>
 
             <div>
-                <img className="vector-list"  src={homeVector} alt=""/>
+                <img className="vector-list" src={homeVector} alt=""/>
             </div>
             <div className="navigate-word navigate-word-lenta">
                 <a href="/news" className="href-form"> Лента </a>
@@ -34,6 +35,12 @@ export default function ListComponent(props){
             </div>
             <div className="navigate-word navigate-word-user">
                 <a href="/user" className="href-form"> Профиль </a>
+            </div>
+            <div>
+                <img className="vector-list-search" src={searchVector} alt=""/>
+            </div>
+            <div className="navigate-word navigate-word-poisk">
+                <a href="/poisk" className="href-form"> Поиск </a>
             </div>
         </div>
 
