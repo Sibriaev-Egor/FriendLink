@@ -42,7 +42,7 @@ const CreatePostPage = observer(() => {
             },
             body: JSON.stringify({text})
         }).then(response => {
-            if (response.status === 200) navigate(`/edit/${user.info.id}`);
+            if (response.status === 200) navigate(`/user/${user.info.id}`);
             else response.json().then(response => alert(response.message))
         })
     };

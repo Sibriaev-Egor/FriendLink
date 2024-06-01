@@ -14,6 +14,7 @@ export default function PostComponent(props){
     const {user} = useContext(Context)
     const [isLike, setIsLike] = useState(props.isLike);
     const [likesAmount, setLikesAmount] = useState(parseInt(props.likes_amount))
+    const navigate = useNavigate()
     const handleSubmit = async (event) => {
         event.preventDefault();
         fetch('/api/post/like', {
@@ -34,6 +35,44 @@ export default function PostComponent(props){
         setIsLike(!isLike)
 
     }
+    const deleteSubmit = async (event) => {
+        if (user.info.role) {
+            event.preventDefault();
+            fetch('/api/admin/deletePost', {
+                method: 'POST',
+                headers: {
+                    'authorization': 'type ' + user.token,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "id": props.postId
+                })
+            }).then(response => {
+                if (response.status === 200) {
+                    navigate(`/user/${props.postUserId}`)
+                }
+            })
+        }
+        else {
+            event.preventDefault();
+            fetch('/api/post/delete', {
+                method: 'POST',
+                headers: {
+                    'authorization': 'type ' + user.token,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "id": props.postId
+                })
+            }).then(response => {
+                if (response.status === 200) {
+                    navigate(`/user/${props.postUserId}`)
+                }
+            })
+        }
+        
+
+    };
     return (
         <div className={"post-item"}>
             <div className="nick-word-post">{
@@ -49,9 +88,13 @@ export default function PostComponent(props){
             <button className="btn-heart" onClick={handleSubmit}>
                 <img className="vector-heart-post" src={isLike ? heartFillVector : heartVector}/>
             </button>
-            <button className="btn-heart">
-                <img className="vector-trash-post" src={trashVector}/>
-            </button>
+            {
+                props.postUserId != user.info.id && !user.info.role ? <div></div> : 
+                <button className="btn-heart" onClick={deleteSubmit}>
+                    <img className="vector-trash-post" src={trashVector}/>
+                </button>
+            }
+            
 
         </div>
         // <div>
