@@ -109,3 +109,19 @@ textarea{
 .pop-up-close::after {
     transform: rotate(-45deg);
 }
+
+.vector-3{
+    height: 30px;
+    width: 25px;
+    position: relative;
+    left: 650px;
+    top: -60px;
+    cursor: pointer;
+}
+.btn-plus{
+    background: none;
+    border: none;
+    padding: 0;
+    all: unset;
+    cursor: pointer;
+}

@@ -18,6 +18,7 @@ import userVector from '../../pictures/vectors/user.png';
 import usersVector from '../../pictures/vectors/users.png';
 import postVector from '../../pictures/vectors/post.png';
 import usereditVector from '../../pictures/vectors/user-edit.png';
+import userplusVector from '../../pictures/vectors/user-plus.png';
 
 
 const openPopUp = document.getElementById('open_pop_up');
@@ -108,6 +109,13 @@ const UserPage = observer(() => {
                         <img className="vector-list-user" style={{left: 1320, top: 113}} src={usereditVector} alt=""/>
                     </a>
                 </div>
+
+                <div>
+                    <button className="btn-plus">
+                        <img className="vector-list-user" style={{height: 30, width: 25, left: 1355, top: 106}} src={userplusVector} alt=""/>
+                    </button>
+                </div>
+
                 <a href={`/user/${id}`}>
                     <img className="vector-list-user" style={{left: 461, top: 222}} src={userVector} alt=""/>
                     <div className="navigate-word navigate-word-post">
