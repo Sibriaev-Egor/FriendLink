@@ -20,9 +20,15 @@ export default function FriendComponent(props){
             <div className="tablet-friend">
                 <div className="ellipse-friend"></div>
                 <div className="nick-word-friend">{props.nick}</div>
-                <img className="vector-1" src={trashVector}/>
-                <img className="vector-2" src={blacklistVector}/>
-                <img className="vector-3" src={userplusVector}/>
+                <button className="btn-friend">
+                    <img className="vector-1" src={trashVector}/>
+                </button>
+                <button className="btn-friend">
+                    <img className="vector-2" src={blacklistVector}/>
+                </button>
+                <button className="btn-friend">
+                    <img className="vector-3" src={userplusVector}/>
+                </button>
             </div>
         </div>
     )
