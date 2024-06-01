@@ -13,6 +13,13 @@ import cactusImage from '../../pictures/images/cactus.png';
 import signoutVector from '../../pictures/vectors/sign-out.png';
 
 export default function CapComponent(props){
+    const navigate = useNavigate();
+    const {user} = useContext(Context)
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        user.clear();
+        navigate(`/`);
+    }
     return (
         <div>
             <div className="cap"></div>
@@ -20,7 +27,7 @@ export default function CapComponent(props){
             <div>
                 <img className="cactus-page" src={cactusImage} alt=""/>
             </div>
-            <button>
+            <button onClick={handleSubmit}>
                 <img className="vector-sign-out" src={signoutVector} alt=""/>
             </button>
         </div>

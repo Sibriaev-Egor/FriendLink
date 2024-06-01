@@ -39,11 +39,13 @@ const User = new class UserEntity {
     }
 }
 const Post = new class PostEntity {
-    async get_all(userId) {
-        const data = await pool.query(`SELECT post_table.*, COALESCE(t.amount, 0) as likes_amount FROM post_table left join 
+    async get_all(postUserId, userId) {
+        const data = await pool.query(`SELECT post_table.*, COALESCE(t.amount, 0) as likes_amount,
+            (select count(*)=1 from like_table where user_id=$2 and post_id = t.post_id) as is_like
+            FROM post_table left join 
             (select count(*) as amount, post_id from like_table where post_id in 
             (select id from post_table where user_id=$1) group by post_id) as t 
-            on post_table.id = t.post_id WHERE user_id=$1`, [userId])
+            on post_table.id = t.post_id WHERE user_id=$1`, [postUserId, userId])
         return data.rows
     }
     async get_one(id) {

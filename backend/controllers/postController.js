@@ -4,10 +4,11 @@ const {Post, Like, Claim} = require("../utils/Entities")
 
 class postController{
     async get_all(req, res, next) {
-        const userId = req.params.id
-        if (!userId) return next(ApiError.badRequest("Пользователь не найден!"))
+        const userId = req.user.id
+        const postUserId = req.params.id
+        if (!postUserId) return next(ApiError.badRequest("Пользователь не найден!"))
         try {
-            const posts = await Post.get_all(userId)
+            const posts = await Post.get_all(postUserId, userId)
             return res.json({posts})
         } catch (e) {
             return next(ApiError.internal(e.message))

@@ -10,16 +10,39 @@ import heartVector from '../../pictures/vectors/heart.png';
 import heartFillVector from '../../pictures/vectors/heart-fill.png';
 
 export default function PostComponent(props){
+    const {user} = useContext(Context)
+    const [isLike, setIsLike] = useState(props.isLike);
+    const [likesAmount, setLikesAmount] = useState(parseInt(props.likes_amount))
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        fetch('/api/post/like', {
+            method: 'POST',
+            headers: {
+                'authorization': 'type ' + user.token,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "id": props.postId,
+                "isLike": !isLike
+            })
+        })
+        if (!isLike) {
+            setLikesAmount(likesAmount + 1)
+        }
+        else setLikesAmount(likesAmount - 1)
+        setIsLike(!isLike)
+
+    }
     return (
         <div className={"post-item"}>
             <div className="nick-word-post">{props.nick}</div>
             <div className="line-post" style={{top: 70}}></div>
             <div className="text-post-post">{props.text}</div>
             <div className="line-post" style={{top: 250}}></div>
-            <div className="likes-word">{'likes ' + props.likes_amount}</div>
+            <div className="likes-word">{'likes ' + likesAmount}</div>
             <div className="date-post">{'date ' + props.date}</div>
-            <button className="btn-heart">
-                <img className="vector-heart-post" src={heartVector}/>
+            <button className="btn-heart" onClick={handleSubmit}>
+                <img className="vector-heart-post" src={isLike ? heartFillVector : heartVector}/>
             </button>
 
         </div>

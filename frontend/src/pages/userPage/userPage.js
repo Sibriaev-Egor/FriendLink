@@ -31,28 +31,31 @@ const UserPage = observer(() => {
     const [description, setDescription] = useState(null);
     
     useEffect(() => {
-        console.log(user.info)
-    }, [user.info])
-    
-    // useEffect(() => {
-    //     fetch(`/api/user/${user.info.id}`)
-    //     then(response => response.json()).
-    //     then(response => {
-    //         setDescription(response.description)
-    //         if (!user.nick) {
-    //             user.setNick(response.nick)
-    //         }
-    //     });
-    // }, [])
+        fetch(`/api/user/${user.info.id}`).
+        then(response => response.json()).
+        then(response => {
+            setDescription(response.description)
+            if (!user.nick) {
+                user.setNick(response.nick)
+            }
+        });
+    }, [])
+
+    useEffect(() => {
+        fetch(`/api/post/getAll/${user.info.id}`, {
+            method: 'GET',
+            headers: {
+                'authorization': 'type ' + user.token
+            }
+        }).
+        then(response => response.json()).
+        then(response => setPostArray(response.posts));
+    }, [])
 
     // useEffect(() => {
-    //     fetch(`/api/post/getAll/${user.info.id}`).
-    //     then(response => response.json()).
-    //     then(response => setPostArray(response.posts));
-    // }, [])
-    useEffect(() => {
-        console.log(postArray)
-    }, [postArray])
+    //     console.log(postArray)
+    // }, [postArray])
+    
     return (
         <div>
             <CapComponent></CapComponent>
@@ -142,6 +145,8 @@ const UserPage = observer(() => {
                             text={post.text}
                             likes_amount={post.likes_amount}
                             date={post.date}
+                            isLike={post.is_like}
+                            postId={post.id}
                         />
                     )) : <div className={"word-no-post"}> Нет постов</div>
                 }
