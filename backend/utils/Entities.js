@@ -25,8 +25,8 @@ const User = new class UserEntity {
         return data.rows[0]
     }
     async get_user_by_nick(nick) {
-        const data = await pool.query(`SELECT id, description, nick FROM user_table WHERE nick=$1`, [nick])
-        return data.rows[0]
+        const data = await pool.query(`SELECT id, nick FROM user_table WHERE LOWER(nick) LIKE LOWER($1)`, [nick])
+        return data.rows
     }
     async edit_description(description, id) {
         await pool.query(`UPDATE user_table SET description=$1 WHERE id=$2`, [description, id])

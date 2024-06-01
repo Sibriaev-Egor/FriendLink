@@ -16,7 +16,7 @@ const PoiskPage = observer(() => {
     const [nick, setNick] = useState("");
     const [users, setUsers] = useState([]);
     const handleChange = async () => {
-        if (nick.length >= 3) {
+        if (nick.length > 2) {
             fetch('/api/user/getUser', {
                 method: 'POST',
                 headers: {
@@ -25,7 +25,8 @@ const PoiskPage = observer(() => {
                 body: JSON.stringify({'nick':'%' + nick + '%'})
             }).then(response => response.json()).
             then(response => {
-                if (response) setUsers(response)
+                if (response.user) setUsers(response.user)
+                console.log(response.user)
             })
         }
     }
@@ -50,16 +51,15 @@ const PoiskPage = observer(() => {
                 />
             </div>
 
-            <div>
+            <div className="tablet-users">
                 {
                     users.length !== 0 ? users.map((oneUser) => (
-                            <div className="tablet-users">
-                        <FriendComponent
-                            nick={oneUser.nick}
-                            id={oneUser.id}
-                        />
-                            </div>
-                    )) : <div className={"word-no-users"}> Пользователи не найедены не найдены!</div>
+                        
+                                <FriendComponent
+                                    nick={oneUser.nick}
+                                    id={oneUser.id}
+                                />
+                    )) : <div className={"word-no-users"}> Пользователи не найдены!</div>
                 }
             </div>
 
