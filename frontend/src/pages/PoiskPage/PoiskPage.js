@@ -49,14 +49,17 @@ const PoiskPage = observer(() => {
                     }}
                 />
             </div>
+
             <div>
                 {
                     users.length !== 0 ? users.map((oneUser) => (
+                            <div className="tablet-users">
                         <FriendComponent
                             nick={oneUser.nick}
                             id={oneUser.id}
                         />
-                    )) : <div className={"word-no-post"}> Пользователи не найедены не найдены!</div>
+                            </div>
+                    )) : <div className={"word-no-users"}> Пользователи не найедены не найдены!</div>
                 }
             </div>
 
