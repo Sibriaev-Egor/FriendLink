@@ -1,0 +1,48 @@
+.href-form {
+    text-decoration: none;
+    color: #117120;
+}
+.cactus {
+    width: 234px;
+    height: 293px;
+    left: 603px;
+    top: 66px;
+    position: absolute
+}
+
+.welcome-log-reg{
+    width: 450px;
+    height: 60px;
+    left: 495px;
+    top: 465px;
+    position: absolute;
+    background: #96F486;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+
+}
+.text-log-reg{
+    width: 450px; left: 495px;
+    position: absolute;
+    text-align: center;
+    color: #117120;
+    font-size: 40px;
+    font-family: Inter;
+    font-style: italic;
+    font-weight: 200;
+    text-transform: uppercase;
+    word-wrap: break-word;
+}
+button{
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    border: 1px black solid;
+
+    text-align: center;
+    font-family: Inter, serif;
+    font-style: italic;
+    color: #42BB30;
+    font-weight: 200;
+    text-transform: uppercase;
+    word-wrap: break-word;
+}

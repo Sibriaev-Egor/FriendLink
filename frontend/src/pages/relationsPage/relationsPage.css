@@ -1,0 +1,122 @@
+
+.count{
+    position: relative;
+    left: 30px;
+    top: 20px;
+    color: black;
+    font-family: Inter, serif;
+    font-weight: 300;
+    word-wrap: break-word;
+    font-size: 17px;
+}
+.friend_tablet{
+    width: 954px;
+    left: 430px;
+    position: absolute;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: 1px #D4D4D4 solid
+}
+/*button{*/
+/*    background: none;*/
+/*    border: 1px;*/
+/*    border-radius: 4px;*/
+/*    padding: 10px 20px;*/
+/*    font-size: .9rem;*/
+/*}*/
+/*button:hover{*/
+/*    background: #EDFFEA;*/
+/*}*/
+/*button:active{*/
+/*    background: black;*/
+/*    color: white;*/
+/*}*/
+.list-relations{
+    width: 800px;
+    height: 500px;
+    background: white;
+    border-radius: 20px;
+}
+.container{
+    left: 130px;
+    top: 70px;
+    position: relative;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #EDFFEA;
+    padding: 50px;
+    overflow: hidden;
+}
+.slider{
+    width: 800px;
+    height: 500px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    margin: 30px auto;
+    overflow: hidden;
+}
+.slider-line{
+    width: 3200px;
+    height: 500px;
+    background: #EDFFEA;
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: all ease 0.5s;
+}
+.navigate-word-no-friend{
+    left: 30px;
+    font-size: 20px;
+}
+.slider-nav{
+    left: 0;
+    top: 40px;
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+}
+.slider-nav .slider-nav-item{
+    width: 150px;
+    height: 30px;
+
+    border-radius: 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid lightgrey;
+    cursor: pointer;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+
+    font-size: 17px;
+    font-family: Inter, serif;
+    font-weight: 300;
+    word-wrap: break-word;
+    color: #117120;
+    text-align: center;
+}
+.slider-nav .slider-nav-item:hover{
+    background-color: #96F486;
+}
+#s1:checked~ .s1{
+    margin-left: 0;
+}
+#s2:checked~ .s1{
+    margin-left: -20%;
+}
+#s3:checked~ .s1{
+    margin-left: -40%;
+}
+#s4:checked~ .s1{
+    margin-left: -60%;
+}
+.scroll{
+    overflow-y: scroll;
+    scrollbar-color: #96F486 white;
+    border-radius: 20px;
+}

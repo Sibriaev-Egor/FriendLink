@@ -1,0 +1,43 @@
+div.name{
+    left: 76px;
+    top: 13px;
+    position: absolute;
+    text-align: center;
+    font-size: 30px;
+}
+.href-form {
+    text-decoration: none;
+    color: black;
+}
+div.nick{
+    left: 610px;
+    top: 113px;
+    position: absolute;
+    text-align: center;
+    font-size: 20px;
+}
+.tablet-vvod-edit{
+    position: absolute;
+    width: 664px;
+    height: 60px;
+    left: 444px;
+    font-size: 20px;
+}
+
+.button-post-edit{
+    position: absolute;
+    width: 238px;
+    height: 60px;
+    left: 1160px;
+    background: #96F486;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    border: 1px #D4D4D4 solid;
+    cursor: pointer;
+    text-align: center;
+
+    font-size: 20px;
+    font-family: Inter, serif;
+    font-weight: 300;
+    word-wrap: break-word;
+}

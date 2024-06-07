@@ -1,0 +1,20 @@
+.status-error {
+    left: 170px;
+    top:-70px;
+    font-size: 100px;
+    position: absolute;
+}
+.message-error {
+    width: 991px;
+    left: -150px;
+    top:50px;
+    position: relative;
+    font-size: 25px;
+}
+.cactus-error {
+    width: 400px;
+    height:459px;
+    left: 488px;
+    top: 250px;
+    position: relative;
+}

@@ -1,0 +1,39 @@
+.navigate-word-lenta{
+    position: absolute;
+    left: 133px;
+    top: 249px;
+    font-size: 18px;
+}
+.navigate-word-user{
+    left: 133px;
+    top: 291px;
+    font-size: 18px
+}
+.navigate-word-poisk{
+    position: absolute;
+    left: 133px;
+    top: 333px;
+    font-size: 18px;
+}
+.vector-list-user{
+    top: 294px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 66px;
+}
+
+.vector-list{
+    top: 244px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 66px;
+}
+.vector-list-search{
+     top: 334px;
+     position: absolute;
+     width: 25px;
+     height: 25px;
+     left: 66px;
+ }

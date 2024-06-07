@@ -1,0 +1,21 @@
+
+input{
+    background: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    border: 1px white solid;
+
+    text-align: center;
+    color: #CECECE;
+    font-size: 30px;
+    font-family: Inter, serif;
+    font-weight: 400;
+    word-wrap: break-word
+}
+input:focus {
+    outline-width: 0;
+    border: 1px solid grey;
+}
+div.nick-word{
+    left: 76px; top: 163px; font-size: 20px;
+}

@@ -1,0 +1,67 @@
+
+.tablet-friend{
+    width: 750px;
+    height: 70px;
+    left: 20px;
+    top: 30px;
+    margin: 10px 0;
+    position: relative;
+    background: #C2F8BA;
+    border-radius: 20px;
+}
+.href-form {
+    text-decoration: none;
+    color: black;
+}
+.ellipse-friend{
+    width: 60px;
+    height: 60px;
+    left: 30px;
+    top: 5px;
+    position: relative;
+    background: #D9D9D9;
+    border-radius: 9999px
+}
+.nick-word-friend{
+    left: 120px;
+    top: -35px;
+    position: relative;
+
+    color: black;
+    font-family: Abhaya Libre ExtraBold, serif;
+    font-weight: 800;
+    text-transform: capitalize;
+    word-wrap: break-word;
+    font-size: 17px;
+}
+.vector-1{
+    height: 30px;
+    width: 25px;
+    position: relative;
+    left: 610px;
+    top: -60px;
+    cursor: pointer;
+}
+.vector-2{
+    height: 30px;
+    width: 30px;
+    position: relative;
+    left: 630px;
+    top: -60px;
+    cursor: pointer;
+}
+.vector-3{
+    height: 30px;
+    width: 25px;
+    position: relative;
+    left: 650px;
+    top: -60px;
+    cursor: pointer;
+}
+.btn-friend{
+    background: none;
+    border: none;
+    padding: 0;
+    all: unset;
+    cursor: pointer;
+}
